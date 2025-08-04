@@ -47,6 +47,7 @@
   </div>
   <main>
     <section class="intro-section">
+      <h1 class="section-title">Férias</h1>
       <p class="intro-text-main">O servidor fará jus, anualmente, a 30 (trinta) dias de férias.</p>
     </section>
     <section class="icones">
@@ -63,8 +64,8 @@
         </a>
       </div>
       <div class="icone">
-        <a href="ocupante-de-cargo-de-chefia.html" class="icone-link">
-          <img src="https://img.icons8.com/ios-filled/100/leadership.png" alt="Ocupante de Cargo de Chefia">
+        <a href="cargo-de-chefia.html" class="icone-link">
+          <img src="https://img.icons8.com/?size=100&id=8951&format=png&color=000000" alt="Cargo de Chefia">
           <span>Ocupante de Cargo de Chefia</span>
         </a>
       </div>
@@ -82,10 +83,25 @@
       </div>
     </section>
   </main>
-  <footer class="footer-banner">
+  <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">
-      <span>Informações e Contato</span>
-      <div class="footer-social">
+      <div class="footer-section">
+        <h3>Informações e Contato</h3>
+        <p>Telefone: (62) 3226-6436</p>
+        <p>WhatsApp: (62) 98480-7353</p>
+        <p>Email: ouvidoria.agr@goias.gov.br</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Úteis</h3>
+        <ul>
+          <li><a href="https://www.goias.gov.br" target="_blank" rel="noopener">Portal do Governo</a></li>
+          <li><a href="https://www.goias.gov.br/agr/" target="_blank" rel="noopener">Site Oficial AGR</a></li>
+          <li><a href="https://www.transparencia.go.gov.br" target="_blank" rel="noopener">Transparência</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociais</h3>
+        <div class="footer-social">
         <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#000">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -123,10 +139,17 @@
     © Copyright 2025, Agência Goiana de Regulação - All Rights Reserved
   </div>
   <div class="floating-buttons">
-    <button id="dark-mode-btn" title="Alternar Modo Escuro" aria-label="Alternar Modo Escuro">
+    <button id="dark-mode-btn" title="Alternar Modo Escuro" aria-label="Alternar Modo Escuro" tabindex="0">
       <span id="dark-mode-icon">&#9789;</span>
     </button>
+    <button id="back-to-top-btn" title="Voltar ao topo" aria-label="Voltar ao topo" tabindex="0" style="display: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
   </div>
+  <!-- Notification Toast -->
+  <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
   <script>
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
@@ -155,8 +178,8 @@
         logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true';
       }
     }
-    // DARK MODE ICON SWITCH
-    function updateDarkModeIcon() {
+   // DARK MODE ICON SWITCH
+   function updateDarkModeIcon() {
       const icon = document.getElementById('dark-mode-icon');
       if (document.body.classList.contains('dark-mode')) {
         icon.innerHTML = '&#9728;'; // sun
@@ -195,6 +218,84 @@
     document.addEventListener('mousedown', function() {
       document.body.classList.remove('user-is-tabbing');
     });
+
+    // Performance: Hide loading overlay when page is ready
+    window.addEventListener('load', function() {
+      const loadingOverlay = document.getElementById('loading-overlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.opacity = '0';
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.style.display = 'block';
+        } else {
+          backToTopBtn.style.display = 'none';
+        }
+      });
+
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const toast = document.getElementById('notification-toast');
+      if (toast) {
+        toast.textContent = message;
+        toast.className = `notification-toast ${type}`;
+        toast.style.display = 'block';
+        
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }
+    }
+
+    // Analytics: Track page views
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_view', {
+        'page_title': 'Quem Somos',
+        'page_location': window.location.href
+      });
+    }
+
+    // Track user interactions
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.icone-link')) {
+        const linkText = e.target.closest('.icone-link').querySelector('span').textContent;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click', {
+            'event_category': 'navigation',
+            'event_label': linkText
+          });
+        }
+      }
+    });
+
+    // Service Worker Registration for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('SW registered: ', registration);
+          })
+          .catch(function(registrationError) {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
   </script>
 </body>
-</html> 
+</html>  

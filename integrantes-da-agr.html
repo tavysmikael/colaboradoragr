@@ -3,9 +3,358 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Férias - Procedimentos para Solicitar as Férias</title>
+  <title>Integrantes da AGR - Organograma</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .organograma-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .organograma-title {
+      text-align: center;
+      color: #2d3748;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .organograma {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      position: relative;  /* Essencial para ancorar as linhas */
+    }
+
+    /* Linha principal vertical que conecta os níveis */
+    .organograma::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 92px; /* Posição inicial abaixo do presidente */
+      width: 3px;
+      height: 350px; /* Altura para conectar os níveis 2 e 3 */
+      background: #a0aec0;
+      transform: translateX(-1.5px);
+      z-index: -1;
+    }
+
+    /* Caixa genérica */
+    .node {
+      background: #fff;
+      border: 2px solid #cbd5e0;
+      border-radius: 10px;
+      padding: 15px 20px;
+      text-align: center;
+      min-width: 220px;
+      font-weight: 600;
+      position: relative;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    .node:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Presidente - Nível 1 */
+    .presidente {
+      background: #1c9b6d;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 25px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 40px; /* Espaço para a linha descer */
+    }
+    
+    .presidente:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(28, 155, 109, 0.4);
+    }
+
+    .presidente::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      width: 3px;
+      height: 40px;
+      background: linear-gradient(to bottom, #97c289, #7a9f6e);
+      transform: translateX(-50%);
+    }
+
+    /* Nível 2 - Staff Principal */
+    .staff-container {
+      display: flex;
+      justify-content: center;
+      gap: 200px;
+      position: relative;
+      width: 100%;
+    }
+
+    .staff-col {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      position: relative;
+    }
+
+    .staff-col .node {
+      background: linear-gradient(135deg, #e7f4e4, #d4e8d1);
+      border: 2px solid #97c289;
+      border-radius: 10px;
+      padding: 15px 20px;
+      text-align: center;
+      min-width: 200px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(151, 194, 137, 0.2);
+    }
+    
+    .staff-col .node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(151, 194, 137, 0.3);
+      background: linear-gradient(135deg, #d4e8d1, #c1dcc0);
+    }
+
+     /* Linha que sai do lado de cada item do Staff */
+     .staff-col .node::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      background: #a0aec0;
+      width: 110px; /* Comprimento da linha */
+      transform: translateY(-50%);
+    }
+
+    /* Ajuste para alinhar as linhas corretamente nos lados */
+    .staff-col:first-child .node::before {
+      left: 100%;
+    }
+    .staff-col:last-child .node::before {
+      right: 100%;
+    }
+
+    /* Nível 3 - Diretorias */
+    .diretorias {
+      display: flex;
+      justify-content: space-around; /* Espaçamento entre as diretorias */
+      gap: 80px;
+      position: relative;
+      width: 80%;
+    }
+    
+     /* Linha horizontal do Nível 3 */
+    .diretorias::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(to right, #97c289, #7a9f6e);
+      transform: translateX(-50%);
+    }
+
+    .coluna {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .coluna .node {
+      background: linear-gradient(135deg, #f0f8f0, #e5f2e5);
+      border: 2px solid #7a9f6e;
+      border-radius: 10px;
+      padding: 18px 25px;
+      text-align: center;
+      min-width: 240px;
+      font-size: 1rem;
+      font-weight: 600;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(122, 159, 110, 0.2);
+    }
+    
+    .coluna .node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(122, 159, 110, 0.3);
+      background: linear-gradient(135deg, #e5f2e5, #d9ebd9);
+    }
+
+    /* Linha vertical que conecta a Diretoria à barra horizontal */
+    .coluna > .node::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: -22px;
+      width: 3px;
+      height: 20px;
+      background: #a0aec0;
+      transform: translateX(-1.5px);
+    }
+    
+    /* Linha vertical que desce da Diretoria para as Gerências */
+    /*.coluna > .node::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -30px;
+      width: 3px;
+      height: 30px;
+      background: #a0aec0;
+      transform: translateX(-1.5px);
+    }
+
+    /* Nível 4 - Gerências */
+    .gerencias {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 25px;
+      width: 100%;
+      position: relative;
+      padding-left: 40px;
+      border-left: 3px solid #7a9f6e;
+    }
+
+    .gerencias .node {
+      background: linear-gradient(135deg, #f8fcf8, #f0f8f0);
+      border: 2px solid #5a7a4e;
+      border-radius: 8px;
+      padding: 12px 18px;
+      text-align: center;
+      min-width: 180px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(90, 122, 78, 0.15);
+    }
+    
+    .gerencias .node:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(90, 122, 78, 0.25);
+      background: linear-gradient(135deg, #f0f8f0, #e8f4e8);
+    }
+
+    .gerencias .node::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      width: 35px;
+      height: 2px;
+      background: linear-gradient(to right, #5a7a4e, #7a9f6e);
+      transform: translateY(-50%);
+    }
+
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .staff-container {
+        flex-direction: column;
+        gap: 30px;
+      }
+      
+      .diretorias {
+        flex-direction: column;
+        gap: 40px;
+      }
+      
+      .staff-container::before,
+      .diretorias::before {
+        display: none;
+      }
+      
+      .presidente::after {
+        display: none;
+      }
+      
+      .coluna .node::after {
+        display: none;
+      }
+      
+      .gerencias {
+        border-left: none;
+        padding-left: 0;
+        align-items: center;
+      }
+      
+      .gerencias .node::before {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .organograma-container {
+        padding: 20px 10px;
+      }
+      
+      .organograma-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+      
+      .presidente {
+        min-width: 90%;
+        font-size: 1rem;
+        padding: 20px;
+      }
+      
+      .staff-col .node,
+      .coluna .node,
+      .gerencias .node {
+        min-width: 90%;
+        font-size: 0.85rem;
+      }
+    }
+    
+    /* Dark mode */
+    body.dark-mode .organograma-title {
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .presidente {
+      background: linear-gradient(135deg, #0f5a3f, #0a3d2a);
+      border-color: #0a3d2a;
+    }
+    
+    body.dark-mode .staff-col .node {
+      background: linear-gradient(135deg, #2d3748, #4a5568);
+      border-color: #4a5568;
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .coluna .node {
+      background: linear-gradient(135deg, #4a5568, #718096);
+      border-color: #718096;
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .gerencias .node {
+      background: linear-gradient(135deg, #718096, #a0aec0);
+      border-color: #a0aec0;
+      color: #2d3748;
+    }
+  </style>
 </head>
 <body>
   <header class="banner">
@@ -46,19 +395,87 @@
     </button>
   </div>
   <main>
-    <section class="intro-section">
-      <h1 class="section-title">Procedimentos para Solicitar as Férias</h1>
-      <p class="intro-text">A IN nº 1.569/2023 estabelece os seguintes procedimentos para solicitação de férias:</p>
-      <ul class="intro-text">
-        <li>A solicitação das férias regulamentares será realizada exclusivamente por meio do Terminal Economia - Módulo de Férias, acessível para todos os usuários da rede corporativa, sob a responsabilidade do servidor interessado;</li>
-        <li>De acordo com a Lei nº 20.756/20 e CLT, o pagamento do adicional de férias será incluído na folha de pagamento do mês imediatamente anterior ao início das férias, na proporção do período a ser gozado. Por isso, a solicitação das férias deverá ser precedida de, no mínimo, 60 (sessenta) dias a contar da data de ínicio do gozo.</li>
-        <li>O chefe imediato terá o prazo de 10 (dez) dias corridos para analisar e se manifestar sobre a solicitação de concessão, alteração e cancelamento de férias.</li>
-        <li>Após o processamento do adicional de férias em folha de pagamento não é dado ao servidor desistir da fruição do período solicitado.</li>
-        <li>As férias solicitadas e aprovadas somente poderão ser alteradas ou canceladas antes do lançamento do RHNet.</li>
-        <li>As férias poderão ser suspensas somente por motivo de emergência pública, calamidade pública, comoção interna, convocação para júri, serviço militar ou eleitoral, licença para tratamento de saúde, licença - maternidade e licença - paternidade. O restante do período suspenso será gozado de uma só vez, imediatamente após a cessação do evento que tenha dado causa à suspensão.</li>
-        <li>IN 1.569/2023</li>
-      </ul>
-    </section>
+    <div class="organograma-container">
+      <h1 class="organograma-title">Organograma da AGR</h1>
+      
+      <div class="organograma">
+        <!-- Nível 1: Presidente -->
+        <div class="presidente" onclick="window.open('perfil-presidente.html', '_blank')" style="cursor: pointer;">
+          Gabinete do Presidente<br>do Conselho Regulador
+        </div>
+    
+        <!-- Nível 2: Staff Principal -->
+        <div class="staff-container">
+          <div class="staff-col">
+            <div class="node" onclick="window.open('perfil-conselho.html', '_blank')" style="cursor: pointer;">
+              Conselho Regulador
+            </div>
+            <div class="node" onclick="window.open('perfil-chefia-gabinete.html', '_blank')" style="cursor: pointer;">
+              Chefia de Gabinete
+            </div>
+            <div class="node" onclick="window.open('perfil-ouvidoria.html', '_blank')" style="cursor: pointer;">
+              Ouvidoria Setorial
+            </div>
+          </div>
+          <div class="staff-col">
+            <div class="node" onclick="window.open('perfil-procuradoria.html', '_blank')" style="cursor: pointer;">
+              Procuradoria Setorial
+            </div>
+            <div class="node" onclick="window.open('perfil-secretaria-geral.html', '_blank')" style="cursor: pointer;">
+              Gerência da Secretaria-Geral
+            </div>
+          </div>
+        </div>
+    
+        <!-- Nível 3: Diretorias -->
+        <div class="diretorias">
+          <div class="coluna">
+            <div class="node" onclick="window.open('perfil-diretoria-gestao.html', '_blank')" style="cursor: pointer;">
+              Diretoria de Gestão Integrada
+            </div>
+            <div class="gerencias">
+              <div class="node" onclick="window.open('perfil-gestao-institucional.html', '_blank')" style="cursor: pointer;">
+                Gerência de Gestão Institucional
+              </div>
+              <div class="node" onclick="window.open('perfil-financas.html', '_blank')" style="cursor: pointer;">
+                Gerência de Finanças e Dívida Ativa
+              </div>
+              <div class="node" onclick="window.open('perfil-tecnologia.html', '_blank')" style="cursor: pointer;">
+                Gerência de Tecnologia
+              </div>
+              <div class="node" onclick="window.open('perfil-contabilidade.html', '_blank')" style="cursor: pointer;">
+                Gerência de Contabilidade
+              </div>
+              <div class="node" onclick="window.open('perfil-apoio-administrativo.html', '_blank')" style="cursor: pointer;">
+                Gerência de Apoio Administrativo
+              </div>
+            </div>
+          </div>
+          <div class="coluna">
+            <div class="node" onclick="window.open('perfil-diretoria-regulacao.html', '_blank')" style="cursor: pointer;">
+              Diretoria de Regulação e Fiscalização
+            </div>
+            <div class="gerencias">
+              <div class="node" onclick="window.open('perfil-energia.html', '_blank')" style="cursor: pointer;">
+                Gerência de Energia
+              </div>
+              <div class="node" onclick="window.open('perfil-saneamento.html', '_blank')" style="cursor: pointer;">
+                Gerência de Saneamento Básico
+              </div>
+              <div class="node" onclick="window.open('perfil-transportes.html', '_blank')" style="cursor: pointer;">
+                Gerência de Transportes
+              </div>
+              <div class="node" onclick="window.open('perfil-regulacao-economica.html', '_blank')" style="cursor: pointer;">
+                Gerência de Regulação Econômica
+              </div>
+              <div class="node" onclick="window.open('perfil-bens-desestatizados.html', '_blank')" style="cursor: pointer;">
+                Gerência de Bens Desestatizados
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">

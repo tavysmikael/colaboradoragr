@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde do Servidor - AGR | Portal do Colaborador</title>
+  <meta name="description" content="Acesse informações sobre saúde do servidor, planos médicos, assistência médica e programas de bem-estar da AGR.">
+  <meta name="keywords" content="saúde servidor, plano médico, assistência médica, bem-estar, AGR, colaborador">
+  <meta name="author" content="Agência Goiana de Regulação">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#4299e1">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agr.go.gov.br/saude-servidor">
+  <meta property="og:title" content="Saúde do Servidor - AGR | Portal do Colaborador">
+  <meta property="og:description" content="Acesse informações sobre saúde do servidor, planos médicos e assistência médica.">
+  <meta property="og:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="Banners/logo-azul.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Banners/logo-azul.png">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  
+  <!-- Loading indicator -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <header class="banner" role="banner">
+    <div class="header-left">
+      <a href="index.html">
+        <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      </a>
+    </div>
+    <div class="header-right">
+      <nav class="nav-banner" aria-label="Navegação principal">
+        <a href="index.html" class="nav-btn" aria-label="Início" tabindex="0">INÍCIO</a>
+        <button class="nav-btn" type="button" aria-label="Projetos" tabindex="0">PROJETOS</button>
+        <button class="nav-btn" type="button" aria-label="Pessoas" tabindex="0">PESSOAS</button>
+      </nav>
+      <a href="#menu" class="login-icon" id="menuHamburger" title="Menu" tabindex="0" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="6" width="28" height="2" rx="1" fill="currentColor"/>
+          <rect y="13" width="28" height="2" rx="1" fill="currentColor"/>
+          <rect y="20" width="28" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </a>
+      <div class="menu-dropdown" id="menuDropdown" aria-label="Menu de opções" role="menu">
+        <button onclick="handleLogin()" aria-label="Login" role="menuitem">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 12H3M12 5l7 7-7 7"/></svg>
+          Login
+        </button>
+        <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro" role="menuitem">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Modo Escuro
+        </button>
+        <button onclick="showNotifications()" aria-label="Notificações" role="menuitem">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notificações
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
+    <div class="voltar-container">
+      <a href="index.html" class="btn-voltar-fixo" aria-label="Voltar ao início">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Voltar
+      </a>
+    </div>
+
+    <div class="ferias-central">
+      <h1 class="main-title">Saúde do Servidor</h1>
+      <p>Informações sobre saúde, planos médicos e assistência médica</p>
+    </div>
+
+    <div class="icones-ferias">
+      <div class="icone-ferias">
+        <a href="#plano-medico" class="icone-link" aria-label="Ver plano médico">
+          <img src="https://img.icons8.com/ios-filled/100/000000/heart-monitor.png" alt="Plano Médico" loading="lazy">
+          <span>Plano Médico</span>
+        </a>
+      </div>
+      <div class="icone-ferias">
+        <a href="#assistencia" class="icone-link" aria-label="Ver assistência médica">
+          <img src="https://img.icons8.com/ios-filled/100/000000/stethoscope.png" alt="Assistência Médica" loading="lazy">
+          <span>Assistência Médica</span>
+        </a>
+      </div>
+      <div class="icone-ferias">
+        <a href="#bem-estar" class="icone-link" aria-label="Ver bem-estar">
+          <img src="https://img.icons8.com/ios-filled/100/000000/wellness.png" alt="Bem-estar" loading="lazy">
+          <span>Bem-estar</span>
+        </a>
+      </div>
+      <div class="icone-ferias">
+        <a href="#emergencias" class="icone-link" aria-label="Ver emergências">
+          <img src="https://img.icons8.com/ios-filled/100/000000/emergency.png" alt="Emergências" loading="lazy">
+          <span>Emergências</span>
+        </a>
+      </div>
+    </div>
+
+    <section id="plano-medico" class="info-section">
+      <h2>Plano Médico</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Cobertura do Plano
+          </h3>
+          <p>Informações sobre cobertura médica, odontológica e hospitalar disponível para servidores.</p>
+          <button class="btn-secondary" onclick="verCobertura()">Ver Cobertura</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Rede Credenciada
+          </h3>
+          <p>Consulte a rede de hospitais, clínicas e médicos credenciados pelo plano.</p>
+          <button class="btn-secondary" onclick="consultarRede()">Consultar Rede</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Autorizações
+          </h3>
+          <p>Solicite autorizações para consultas, exames e procedimentos médicos.</p>
+          <button class="btn-primary" onclick="solicitarAutorizacao()">Solicitar Autorização</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="assistencia" class="info-section">
+      <h2>Assistência Médica</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Atendimento Ocupacional
+          </h3>
+          <p>Serviços de medicina ocupacional e saúde do trabalho disponíveis na AGR.</p>
+          <button class="btn-secondary" onclick="agendarAtendimento()">Agendar Atendimento</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Exames Periódicos
+          </h3>
+          <p>Agende seus exames periódicos obrigatórios conforme legislação.</p>
+          <button class="btn-secondary" onclick="agendarExame()">Agendar Exame</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="bem-estar" class="info-section">
+      <h2>Programas de Bem-estar</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Atividades Físicas
+          </h3>
+          <p>Programas de ginástica laboral e atividades físicas promovidas pela AGR.</p>
+          <button class="btn-secondary" onclick="verAtividades()">Ver Atividades</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Saúde Mental
+          </h3>
+          <p>Programas de apoio psicológico e saúde mental para servidores.</p>
+          <button class="btn-secondary" onclick="verSaudeMental()">Ver Programas</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Prevenção
+          </h3>
+          <p>Campanhas de prevenção e promoção da saúde no ambiente de trabalho.</p>
+          <button class="btn-secondary" onclick="verPrevencao()">Ver Campanhas</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="emergencias" class="info-section">
+      <h2>Emergências Médicas</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Contatos de Emergência
+          </h3>
+          <p>Números de telefone e contatos para emergências médicas.</p>
+          <button class="btn-primary" onclick="verContatos()">Ver Contatos</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Primeiros Socorros
+          </h3>
+          <p>Informações sobre primeiros socorros e procedimentos de emergência.</p>
+          <button class="btn-secondary" onclick="verPrimeirosSocorros()">Ver Procedimentos</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="alert">
+      <strong>Importante:</strong> Em caso de emergência médica, ligue imediatamente para o SAMU (192) ou procure o hospital mais próximo. Para questões relacionadas ao plano médico, entre em contato com o RH.
+    </div>
+  </main>
+
+  <!-- Back to top button -->
+  <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Voltar ao topo">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Notification toast -->
+  <div id="notification-toast" class="notification-toast"></div>
+
+  <script>
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', function() {
+      hideLoadingOverlay();
+      setupBackToTop();
+      setupNotifications();
+      setupGamification();
+      setupAnalytics();
+      registerServiceWorker();
+    });
+
+    // Page-specific functions
+    function verCobertura() {
+      showNotification('Carregando informações de cobertura...', 'info');
+    }
+
+    function consultarRede() {
+      showNotification('Consultando rede credenciada...', 'info');
+    }
+
+    function solicitarAutorizacao() {
+      showNotification('Abrindo formulário de autorização...', 'info');
+    }
+
+    function agendarAtendimento() {
+      showNotification('Abrindo agenda de atendimento...', 'info');
+    }
+
+    function agendarExame() {
+      showNotification('Abrindo agenda de exames...', 'info');
+    }
+
+    function verAtividades() {
+      showNotification('Carregando atividades físicas...', 'info');
+    }
+
+    function verSaudeMental() {
+      showNotification('Carregando programas de saúde mental...', 'info');
+    }
+
+    function verPrevencao() {
+      showNotification('Carregando campanhas de prevenção...', 'info');
+    }
+
+    function verContatos() {
+      showNotification('Exibindo contatos de emergência...', 'info');
+    }
+
+    function verPrimeirosSocorros() {
+      showNotification('Carregando procedimentos de primeiros socorros...', 'info');
+    }
+
+    // Common functions from other pages
+    function hideLoadingOverlay() {
+      const overlay = document.getElementById('loading-overlay');
+      if (overlay) {
+        setTimeout(() => {
+          overlay.style.opacity = '0';
+          setTimeout(() => {
+            overlay.style.display = 'none';
+          }, 300);
+        }, 500);
+      }
+    }
+
+    function setupBackToTop() {
+      const backToTopBtn = document.getElementById('back-to-top-btn');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
+          } else {
+            backToTopBtn.style.display = 'none';
+          }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    }
+
+    function setupNotifications() {
+      window.showNotifications = function() {
+        showNotification('Sistema de notificações em desenvolvimento!', 'info');
+      };
+    }
+
+    function showNotification(message, type = 'info') {
+      const toast = document.getElementById('notification-toast');
+      if (toast) {
+        toast.textContent = message;
+        toast.className = `notification-toast notification-${type}`;
+        toast.style.display = 'block';
+        
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }
+    }
+
+    function setupGamification() {
+      const progress = JSON.parse(localStorage.getItem('userProgress')) || { level: 1, xp: 0, pagesVisited: 0 };
+      progress.pagesVisited = (progress.pagesVisited || 0) + 1;
+      progress.xp += 5;
+      
+      const newLevel = Math.floor(progress.xp / 100) + 1;
+      if (newLevel > progress.level) {
+        progress.level = newLevel;
+        showNotification(`Parabéns! Você alcançou o nível ${newLevel}!`, 'success');
+      }
+      
+      localStorage.setItem('userProgress', JSON.stringify(progress));
+    }
+
+    function setupAnalytics() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_view', {
+          page_title: 'Saúde do Servidor',
+          page_location: window.location.href
+        });
+      }
+    }
+
+    function registerServiceWorker() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('Service Worker registrado com sucesso:', registration);
+          })
+          .catch(error => {
+            console.log('Falha ao registrar Service Worker:', error);
+          });
+      }
+    }
+
+    // Menu functionality
+    function handleLogin() {
+      showNotification('Sistema de login em desenvolvimento!', 'info');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+      showNotification(`Modo ${isDarkMode ? 'escuro' : 'claro'} ativado!`, 'success');
+    }
+
+    // Menu toggle
+    document.getElementById('menuHamburger').addEventListener('click', function() {
+      const dropdown = document.getElementById('menuDropdown');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      this.setAttribute('aria-expanded', !isExpanded);
+      dropdown.style.display = isExpanded ? 'none' : 'block';
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const menuBtn = document.getElementById('menuHamburger');
+      const dropdown = document.getElementById('menuDropdown');
+      
+      if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = 'none';
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+</body>
+</html> 

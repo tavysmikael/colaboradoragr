@@ -3,9 +3,267 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Férias - Procedimentos para Solicitar as Férias</title>
+  <title>Perfil - Diretoria de Regulação e Fiscalização</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .profile-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, #f0f8f0, #e5f2e5);
+      border-radius: 15px;
+      border: 2px solid #7a9f6e;
+    }
+    
+    .profile-photo-container {
+      position: relative;
+      flex-shrink: 0;
+    }
+    
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #7a9f6e;
+      box-shadow: 0 4px 12px rgba(122, 159, 110, 0.3);
+    }
+    
+    .profile-info h1 {
+      margin: 0 0 8px 0;
+      color: #2d3748;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .profile-info h2 {
+      margin: 0 0 8px 0;
+      color: #4a5568;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .profile-info p {
+      margin: 0;
+      color: #7a9f6e;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    .profile-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    
+    .profile-details,
+    .profile-bio {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+    }
+    
+    .profile-details h3,
+    .profile-bio h3 {
+      margin: 0 0 20px 0;
+      color: #2d3748;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 2px solid #7a9f6e;
+      padding-bottom: 10px;
+    }
+    
+    .detail-grid {
+      display: grid;
+      gap: 15px;
+    }
+    
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+    
+    .detail-item strong {
+      color: #4a5568;
+      font-weight: 600;
+    }
+    
+    .detail-item span {
+      color: #2d3748;
+      text-align: right;
+    }
+    
+    .profile-bio p {
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .related-profiles {
+      grid-column: 1 / -1;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+    }
+    
+    .related-profiles h3 {
+      margin: 0 0 25px 0;
+      color: #2d3748;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 2px solid #7a9f6e;
+      padding-bottom: 10px;
+    }
+    
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .related-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: #f7fafc;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .related-profile:hover {
+      background: #edf2f7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .related-profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #7a9f6e;
+    }
+    
+    .related-info h4 {
+      margin: 0 0 4px 0;
+      color: #2d3748;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .related-info p {
+      margin: 0;
+      color: #7a9f6e;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      
+      .profile-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Dark mode */
+    body.dark-mode .profile-header {
+      background: linear-gradient(135deg, #4a5568, #718096);
+      border-color: #718096;
+    }
+    
+    body.dark-mode .profile-info h1,
+    body.dark-mode .profile-info h2 {
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .profile-info p {
+      color: #a0aec0;
+    }
+    
+    body.dark-mode .profile-details,
+    body.dark-mode .profile-bio,
+    body.dark-mode .related-profiles {
+      background: #2d3748;
+      border-color: #4a5568;
+    }
+    
+    body.dark-mode .profile-details h3,
+    body.dark-mode .profile-bio h3,
+    body.dark-mode .related-profiles h3 {
+      color: #e2e8f0;
+      border-color: #718096;
+    }
+    
+    body.dark-mode .detail-item {
+      border-color: #4a5568;
+    }
+    
+    body.dark-mode .detail-item strong {
+      color: #a0aec0;
+    }
+    
+    body.dark-mode .detail-item span {
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .profile-bio p {
+      color: #cbd5e0;
+    }
+    
+    body.dark-mode .related-profile {
+      background: #4a5568;
+      border-color: #718096;
+    }
+    
+    body.dark-mode .related-profile:hover {
+      background: #718096;
+    }
+    
+    body.dark-mode .related-info h4 {
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .related-info p {
+      color: #a0aec0;
+    }
+  </style>
 </head>
 <body>
   <header class="banner">
@@ -46,18 +304,93 @@
     </button>
   </div>
   <main>
-    <section class="intro-section">
-      <h1 class="section-title">Procedimentos para Solicitar as Férias</h1>
-      <p class="intro-text">A IN nº 1.569/2023 estabelece os seguintes procedimentos para solicitação de férias:</p>
-      <ul class="intro-text">
-        <li>A solicitação das férias regulamentares será realizada exclusivamente por meio do Terminal Economia - Módulo de Férias, acessível para todos os usuários da rede corporativa, sob a responsabilidade do servidor interessado;</li>
-        <li>De acordo com a Lei nº 20.756/20 e CLT, o pagamento do adicional de férias será incluído na folha de pagamento do mês imediatamente anterior ao início das férias, na proporção do período a ser gozado. Por isso, a solicitação das férias deverá ser precedida de, no mínimo, 60 (sessenta) dias a contar da data de ínicio do gozo.</li>
-        <li>O chefe imediato terá o prazo de 10 (dez) dias corridos para analisar e se manifestar sobre a solicitação de concessão, alteração e cancelamento de férias.</li>
-        <li>Após o processamento do adicional de férias em folha de pagamento não é dado ao servidor desistir da fruição do período solicitado.</li>
-        <li>As férias solicitadas e aprovadas somente poderão ser alteradas ou canceladas antes do lançamento do RHNet.</li>
-        <li>As férias poderão ser suspensas somente por motivo de emergência pública, calamidade pública, comoção interna, convocação para júri, serviço militar ou eleitoral, licença para tratamento de saúde, licença - maternidade e licença - paternidade. O restante do período suspenso será gozado de uma só vez, imediatamente após a cessação do evento que tenha dado causa à suspensão.</li>
-        <li>IN 1.569/2023</li>
-      </ul>
+    <section class="profile-section">
+      <div class="profile-header">
+        <div class="profile-photo-container">
+          <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Foto do Diretor" class="profile-photo">
+        </div>
+        <div class="profile-info">
+          <h1>Dr. Pedro Almeida Santos</h1>
+          <h2>Diretor de Regulação e Fiscalização</h2>
+          <p>Diretoria de Regulação e Fiscalização</p>
+        </div>
+      </div>
+      
+      <div class="profile-content">
+        <div class="profile-details">
+          <h3>Informações Pessoais</h3>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <strong>E-mail:</strong>
+              <span>diretoria.regulacao@agr.go.gov.br</span>
+            </div>
+            <div class="detail-item">
+              <strong>Telefone:</strong>
+              <span>(62) 3201-0003</span>
+            </div>
+            <div class="detail-item">
+              <strong>Formação:</strong>
+              <span>Doutor em Engenharia Elétrica</span>
+            </div>
+            <div class="detail-item">
+              <strong>Experiência:</strong>
+              <span>18 anos em regulação</span>
+            </div>
+            <div class="detail-item">
+              <strong>Especialização:</strong>
+              <span>Regulação de Serviços Públicos</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="profile-bio">
+          <h3>Biografia</h3>
+          <p>Dr. Pedro Almeida Santos é Diretor de Regulação e Fiscalização da Agência Goiana de Regulação desde 2018. Possui vasta experiência em regulação de serviços públicos, especialmente nos setores de energia, saneamento e transportes.</p>
+          <p>Formado em Engenharia Elétrica pela Universidade Federal de Goiás, com mestrado e doutorado em Engenharia Elétrica pela Universidade de São Paulo. É especialista em regulação econômica e fiscalização de serviços públicos.</p>
+          <p>Responsável pela supervisão e regulação de todos os serviços públicos delegados no estado de Goiás, garantindo qualidade, eficiência e preços justos para a população.</p>
+        </div>
+        
+        <div class="related-profiles">
+          <h3>Equipe Relacionada</h3>
+          <div class="related-grid">
+            <a href="perfil-energia.html" class="related-profile">
+              <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Energia">
+              <div class="related-info">
+                <h4>Fernanda Costa</h4>
+                <p>Gerência de Energia</p>
+              </div>
+            </a>
+            <a href="perfil-saneamento.html" class="related-profile">
+              <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Saneamento">
+              <div class="related-info">
+                <h4>Ricardo Oliveira</h4>
+                <p>Gerência de Saneamento Básico</p>
+              </div>
+            </a>
+            <a href="perfil-transportes.html" class="related-profile">
+              <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Transportes">
+              <div class="related-info">
+                <h4>Mariana Silva</h4>
+                <p>Gerência de Transportes</p>
+              </div>
+            </a>
+            <a href="perfil-regulacao-economica.html" class="related-profile">
+              <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Regulação Econômica">
+              <div class="related-info">
+                <h4>André Mendes</h4>
+                <p>Gerência de Regulação Econômica</p>
+              </div>
+            </a>
+            <a href="perfil-bens-desestatizados.html" class="related-profile">
+              <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Bens Desestatizados">
+              <div class="related-info">
+                <h4>Camila Ferreira</h4>
+                <p>Gerência de Bens Desestatizados</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">

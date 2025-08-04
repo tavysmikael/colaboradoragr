@@ -3,12 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Férias - Procedimentos para Solicitar as Férias</title>
+  <title>Galeria | AGR - Espaço do Colaborador</title>
+  <meta name="description" content="Galeria de fotos e vídeos da AGR. Visualize e compartilhe momentos especiais da equipe.">
+  <meta name="keywords" content="galeria, fotos, vídeos, AGR, colaborador, eventos">
+  <meta name="author" content="Agência Goiana de Regulação">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#4299e1">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agr.go.gov.br/galeria.html">
+  <meta property="og:title" content="Galeria | AGR - Espaço do Colaborador">
+  <meta property="og:description" content="Galeria de fotos e vídeos da AGR.">
+  <meta property="og:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.agr.go.gov.br/galeria.html">
+  <meta property="twitter:title" content="Galeria | AGR - Espaço do Colaborador">
+  <meta property="twitter:description" content="Galeria de fotos e vídeos da AGR.">
+  <meta property="twitter:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="Banners/logo-azul.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Banners/logo-azul.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Banners/logo-azul.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
-  <header class="banner">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  
+  <!-- Loading indicator -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <header class="banner" role="banner">
     <div class="header-left">
       <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
     </div>
@@ -45,21 +93,62 @@
       </svg>
     </button>
   </div>
-  <main>
-    <section class="intro-section">
-      <h1 class="section-title">Procedimentos para Solicitar as Férias</h1>
-      <p class="intro-text">A IN nº 1.569/2023 estabelece os seguintes procedimentos para solicitação de férias:</p>
-      <ul class="intro-text">
-        <li>A solicitação das férias regulamentares será realizada exclusivamente por meio do Terminal Economia - Módulo de Férias, acessível para todos os usuários da rede corporativa, sob a responsabilidade do servidor interessado;</li>
-        <li>De acordo com a Lei nº 20.756/20 e CLT, o pagamento do adicional de férias será incluído na folha de pagamento do mês imediatamente anterior ao início das férias, na proporção do período a ser gozado. Por isso, a solicitação das férias deverá ser precedida de, no mínimo, 60 (sessenta) dias a contar da data de ínicio do gozo.</li>
-        <li>O chefe imediato terá o prazo de 10 (dez) dias corridos para analisar e se manifestar sobre a solicitação de concessão, alteração e cancelamento de férias.</li>
-        <li>Após o processamento do adicional de férias em folha de pagamento não é dado ao servidor desistir da fruição do período solicitado.</li>
-        <li>As férias solicitadas e aprovadas somente poderão ser alteradas ou canceladas antes do lançamento do RHNet.</li>
-        <li>As férias poderão ser suspensas somente por motivo de emergência pública, calamidade pública, comoção interna, convocação para júri, serviço militar ou eleitoral, licença para tratamento de saúde, licença - maternidade e licença - paternidade. O restante do período suspenso será gozado de uma só vez, imediatamente após a cessação do evento que tenha dado causa à suspensão.</li>
-        <li>IN 1.569/2023</li>
-      </ul>
+  <main id="main-content" role="main">
+    <section class="gallery-section">
+      <h2 class="section-title">Galeria de Fotos e Vídeos</h2>
+      
+      <div class="gallery-controls">
+        <button id="upload-btn" class="upload-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7,10 12,15 17,10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Adicionar Mídia
+        </button>
+        <input type="file" id="media-input" accept="image/*,video/*" multiple style="display: none;">
+        
+        <select id="filter-type" class="filter-select">
+          <option value="all">Todas as mídias</option>
+          <option value="image">Apenas fotos</option>
+          <option value="video">Apenas vídeos</option>
+        </select>
+      </div>
+      
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Sample items -->
+        <div class="gallery-item" data-type="image">
+          <img src="https://img.icons8.com/?size=100&id=111157&format=png&color=000000" alt="Evento da equipe" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3>Evento da Equipe</h3>
+            <p>Confraternização no trabalho</p>
+            <span class="gallery-date">15/12/2024</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-type="video">
+          <video class="gallery-video" poster="https://img.icons8.com/ios-filled/100/000000/video-gallery.png">
+            <source src="#" type="video/mp4">
+          </video>
+          <div class="gallery-overlay">
+            <h3>Apresentação </h3>
+            <p>Vídeo institucional da AGR</p>
+            <span class="gallery-date">10/12/2024</span>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-type="image">
+          <img src="https://img.icons8.com/ios-filled/100/000000/office.png" alt="Sede da AGR" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3>Dia-a-dia na AGR</h3>
+            <p>Nossa rotina no trabalho</p>
+            <span class="gallery-date">05/12/2024</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+  
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">
       <div class="footer-section">
@@ -127,7 +216,132 @@
   </div>
   <!-- Notification Toast -->
   <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
+  
+  <style>
+    .gallery-section {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px;
+    }
+    .gallery-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .upload-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: #4299e1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .upload-btn:hover {
+      background: #3182ce;
+    }
+    .filter-select {
+      padding: 8px 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      background: white;
+    }
+    .filter-select:focus {
+      outline: none;
+      border-color: #4299e1;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      aspect-ratio: 1;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .gallery-image, .gallery-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+    .gallery-overlay h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+    }
+    .gallery-overlay p {
+      margin: 0 0 8px 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .gallery-date {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+    @media (max-width: 768px) {
+      .gallery-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 16px;
+      }
+    }
+    /* Dark mode */
+    body.dark-mode .gallery-item {
+      background: #23272f;
+    }
+    body.dark-mode .filter-select {
+      background: #2d3748;
+      color: #fff;
+      border-color: #4a5568;
+    }
+  </style>
+  
   <script>
+    // Performance: Hide loading overlay when page is ready
+    window.addEventListener('load', function() {
+      const loadingOverlay = document.getElementById('loading-overlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.opacity = '0';
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 300);
+      }
+    });
+
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
     const menuDropdown = document.getElementById('menuDropdown');
@@ -146,6 +360,7 @@
         menuDropdown.classList.toggle('show');
       }
     });
+
     // LOGO DYNAMIC SWITCH
     function updateLogoForMode() {
       const logo = document.getElementById('main-logo');
@@ -155,8 +370,9 @@
         logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true';
       }
     }
-   // DARK MODE ICON SWITCH
-   function updateDarkModeIcon() {
+    
+    // DARK MODE ICON SWITCH
+    function updateDarkModeIcon() {
       const icon = document.getElementById('dark-mode-icon');
       if (document.body.classList.contains('dark-mode')) {
         icon.innerHTML = '&#9728;'; // sun
@@ -164,6 +380,7 @@
         icon.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>' // moon
       }
     }
+    
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       menuDropdown.classList.remove('show');
@@ -171,17 +388,18 @@
       updateLogoForMode();
       updateDarkModeIcon();
     }
+    
     // Persistência do modo escuro
     if (localStorage.getItem('darkMode') === 'true') {
       document.body.classList.add('dark-mode');
     }
     updateLogoForMode();
     updateDarkModeIcon();
+    
     // Botão flutuante de dark mode
     document.getElementById('dark-mode-btn').addEventListener('click', function(e) {
       toggleDarkMode();
     });
-
     // Dark mode automático pelo sistema
     //if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       //document.body.classList.add('dark-mode');
@@ -273,6 +491,79 @@
           });
       });
     }
+
+    // Gallery functionality
+    const uploadBtn = document.getElementById('upload-btn');
+    const mediaInput = document.getElementById('media-input');
+    const galleryGrid = document.getElementById('gallery-grid');
+    const filterType = document.getElementById('filter-type');
+
+    // Upload functionality
+    uploadBtn.addEventListener('click', function() {
+      mediaInput.click();
+    });
+
+    mediaInput.addEventListener('change', function(e) {
+      const files = Array.from(e.target.files);
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          addMediaToGallery(e.target.result, file.type.startsWith('image/') ? 'image' : 'video', file.name);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    function addMediaToGallery(src, type, title) {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.setAttribute('data-type', type);
+      
+      const date = new Date().toLocaleDateString('pt-BR');
+      
+      if (type === 'image') {
+        item.innerHTML = `
+          <img src="${src}" alt="${title}" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3>${title}</h3>
+            <p>Nova mídia adicionada</p>
+            <span class="gallery-date">${date}</span>
+          </div>
+        `;
+      } else {
+        item.innerHTML = `
+          <video class="gallery-video" poster="${src}">
+            <source src="${src}" type="video/mp4">
+          </video>
+          <div class="gallery-overlay">
+            <h3>${title}</h3>
+            <p>Novo vídeo adicionado</p>
+            <span class="gallery-date">${date}</span>
+          </div>
+        `;
+      }
+      
+      galleryGrid.insertBefore(item, galleryGrid.firstChild);
+    }
+
+    // Filter functionality
+    function filterGallery() {
+      const typeFilter = filterType.value;
+      const items = document.querySelectorAll('.gallery-item');
+      
+      items.forEach(item => {
+        const itemType = item.getAttribute('data-type');
+        const typeMatch = typeFilter === 'all' || itemType === typeFilter;
+        
+        if (typeMatch) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    filterType.addEventListener('change', filterGallery);
   </script>
 </body>
 </html> 

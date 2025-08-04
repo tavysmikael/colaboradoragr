@@ -45,17 +45,54 @@
       </svg>
     </button>
   </div>
-  <main>
+  <main class="main-content">
     <section class="intro-section">
-      <p class="intro-text intro-text-main">Recadastramento Anual</p>
-      <p class="intro-text">Para realizar o recadastramento anual obrigatório, acesse o site oficial do Governo de Goiás:</p>
-      <p class="intro-text"><a href="https://www.recadastramento.go.gov.br/recad/login.xhtml" target="_blank" rel="noopener noreferrer">Acesse o Recadastramento Anual</a></p>
-    </section>
-  </main>
-  <footer class="footer-banner">
+      <h1 class="section-title">Recadastramento Anual</h1>
+      <p class="intro-text">Em razão do <strong>Decreto nº 7.926</strong>, anualmente, no mês do seu aniversário, o servidor deve acessar o site abaixo e realizar seu recadastramento.</p>
+      <a href="https://www.recadastramento.go.gov.br/recad/login.xhtml" target="_blank" rel="noopener noreferrer" class="cta-button">Acesse o Recadastramento Anual</a>
+      
+      <hr class="content-divider">
+
+    <h2>Após realizar o recadastramento, o servidor deve seguir os seguintes passos:</h2>
+    
+    <div class="steps-container">
+      <div class="step-card">
+        <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Opção 1: Presencial</h3>
+        <p>Comparecer à GGI da AGR portando um <strong>documento de identificação oficial</strong> e os doumecntos que comprovam as alterações cadastrais registradas no site (se for o caso).</p>
+      </div>
+      <div class="step-card">
+        <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg>Opção 2: Por E-mail</h3>
+        <p>Se não puder comparecer pessoalmente, o servidor deve enviar um e-mail para <a href="mailto:arrumaremail.agr@goias.gov.br" class="inline-link">ouvidoria.agr@goias.gov.br</a> com a foto do documento de identificação oficial e dos documentos que comprovam as alterações cadastrais registradas no site (se for o caso).</p>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      <div>
+        <strong>Importante:</strong> A validação pela GGI é fundamental para finalizar o recadastramento. Caso o servidor não realize o recadastramento, <strong>terá seu pagamento bloqueado</strong>.
+      </div>
+    </div>
+  </div>
+</main>
+  <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">
-      <span>Informações e Contato</span>
-      <div class="footer-social">
+      <div class="footer-section">
+        <h3>Informações e Contato</h3>
+        <p>Telefone: (62) 3226-6436</p>
+        <p>WhatsApp: (62) 98480-7353</p>
+        <p>Email: ouvidoria.agr@goias.gov.br</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Úteis</h3>
+        <ul>
+          <li><a href="https://www.goias.gov.br" target="_blank" rel="noopener">Portal do Governo</a></li>
+          <li><a href="https://www.goias.gov.br/agr/" target="_blank" rel="noopener">Site Oficial AGR</a></li>
+          <li><a href="https://www.transparencia.go.gov.br" target="_blank" rel="noopener">Transparência</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociais</h3>
+        <div class="footer-social">
         <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#000">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -93,10 +130,17 @@
     © Copyright 2025, Agência Goiana de Regulação - All Rights Reserved
   </div>
   <div class="floating-buttons">
-    <button id="dark-mode-btn" title="Alternar Modo Escuro" aria-label="Alternar Modo Escuro">
+    <button id="dark-mode-btn" title="Alternar Modo Escuro" aria-label="Alternar Modo Escuro" tabindex="0">
       <span id="dark-mode-icon">&#9789;</span>
     </button>
+    <button id="back-to-top-btn" title="Voltar ao topo" aria-label="Voltar ao topo" tabindex="0" style="display: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
   </div>
+  <!-- Notification Toast -->
+  <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
   <script>
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
@@ -125,17 +169,8 @@
         logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true';
       }
     }
-    // LOGO DYNAMIC SWITCH
-    function updateLogoForMode() {
-      const logo = document.getElementById('main-logo');
-      if (document.body.classList.contains('dark-mode')) {
-        logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-branco.png?raw=true';
-      } else {
-        logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true';
-      }
-    }
-    // DARK MODE ICON SWITCH
-    function updateDarkModeIcon() {
+   // DARK MODE ICON SWITCH
+   function updateDarkModeIcon() {
       const icon = document.getElementById('dark-mode-icon');
       if (document.body.classList.contains('dark-mode')) {
         icon.innerHTML = '&#9728;'; // sun
@@ -174,6 +209,84 @@
     document.addEventListener('mousedown', function() {
       document.body.classList.remove('user-is-tabbing');
     });
+
+    // Performance: Hide loading overlay when page is ready
+    window.addEventListener('load', function() {
+      const loadingOverlay = document.getElementById('loading-overlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.opacity = '0';
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.style.display = 'block';
+        } else {
+          backToTopBtn.style.display = 'none';
+        }
+      });
+
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const toast = document.getElementById('notification-toast');
+      if (toast) {
+        toast.textContent = message;
+        toast.className = `notification-toast ${type}`;
+        toast.style.display = 'block';
+        
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }
+    }
+
+    // Analytics: Track page views
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_view', {
+        'page_title': 'Quem Somos',
+        'page_location': window.location.href
+      });
+    }
+
+    // Track user interactions
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.icone-link')) {
+        const linkText = e.target.closest('.icone-link').querySelector('span').textContent;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click', {
+            'event_category': 'navigation',
+            'event_label': linkText
+          });
+        }
+      }
+    });
+
+    // Service Worker Registration for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('SW registered: ', registration);
+          })
+          .catch(function(registrationError) {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
   </script>
 </body>
 </html> 

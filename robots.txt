@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.agr.go.gov.br/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all other content
+Allow: /index.html
+Allow: /quem-somos.html
+Allow: /integrantes-da-agr.html
+Allow: /principais-servicos-da-agr.html
+Allow: /agenda.html
+Allow: /documentos.html
+Allow: /ferias.html
+Allow: /recadastramento.html
+Allow: /styles.css
+Allow: /manifest.json
+Allow: /sw.js 

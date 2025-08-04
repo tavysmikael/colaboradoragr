@@ -3,12 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Férias - Procedimentos para Solicitar as Férias</title>
+  <title>Perfil - Presidente | AGR - Espaço do Colaborador</title>
+  <meta name="description" content="Perfil do Presidente da AGR. Conheça a liderança da Agência Goiana de Regulação.">
+  <meta name="keywords" content="presidente, AGR, perfil, liderança, agência">
+  <meta name="author" content="Agência Goiana de Regulação">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#4299e1">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agr.go.gov.br/perfil-presidente.html">
+  <meta property="og:title" content="Perfil - Presidente | AGR - Espaço do Colaborador">
+  <meta property="og:description" content="Perfil do Presidente da AGR.">
+  <meta property="og:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.agr.go.gov.br/perfil-presidente.html">
+  <meta property="twitter:title" content="Perfil - Presidente | AGR - Espaço do Colaborador">
+  <meta property="twitter:description" content="Perfil do Presidente da AGR.">
+  <meta property="twitter:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="Banners/logo-azul.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Banners/logo-azul.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Banners/logo-azul.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
-  <header class="banner">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  
+  <!-- Loading indicator -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <header class="banner" role="banner">
     <div class="header-left">
       <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
     </div>
@@ -45,19 +93,78 @@
       </svg>
     </button>
   </div>
-  <main>
-    <section class="intro-section">
-      <h1 class="section-title">Procedimentos para Solicitar as Férias</h1>
-      <p class="intro-text">A IN nº 1.569/2023 estabelece os seguintes procedimentos para solicitação de férias:</p>
-      <ul class="intro-text">
-        <li>A solicitação das férias regulamentares será realizada exclusivamente por meio do Terminal Economia - Módulo de Férias, acessível para todos os usuários da rede corporativa, sob a responsabilidade do servidor interessado;</li>
-        <li>De acordo com a Lei nº 20.756/20 e CLT, o pagamento do adicional de férias será incluído na folha de pagamento do mês imediatamente anterior ao início das férias, na proporção do período a ser gozado. Por isso, a solicitação das férias deverá ser precedida de, no mínimo, 60 (sessenta) dias a contar da data de ínicio do gozo.</li>
-        <li>O chefe imediato terá o prazo de 10 (dez) dias corridos para analisar e se manifestar sobre a solicitação de concessão, alteração e cancelamento de férias.</li>
-        <li>Após o processamento do adicional de férias em folha de pagamento não é dado ao servidor desistir da fruição do período solicitado.</li>
-        <li>As férias solicitadas e aprovadas somente poderão ser alteradas ou canceladas antes do lançamento do RHNet.</li>
-        <li>As férias poderão ser suspensas somente por motivo de emergência pública, calamidade pública, comoção interna, convocação para júri, serviço militar ou eleitoral, licença para tratamento de saúde, licença - maternidade e licença - paternidade. O restante do período suspenso será gozado de uma só vez, imediatamente após a cessação do evento que tenha dado causa à suspensão.</li>
-        <li>IN 1.569/2023</li>
-      </ul>
+  <main id="main-content" role="main">
+    <section class="profile-section">
+      <div class="profile-header">
+        <div class="profile-photo-container">
+          <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Foto do Presidente" class="profile-photo">
+        </div>
+        <div class="profile-info">
+          <h1 class="profile-name">Wagner Oliveira Gomes</h1>
+          <h2 class="profile-title">Presidente do Conselho Regulador da AGR</h2>
+          <p class="profile-department">Gabinete do Presidente</p>
+        </div>
+      </div>
+      
+      <div class="profile-content">
+        <div class="profile-details">
+          <h3>Informações Pessoais</h3>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <strong>E-mail:</strong>
+              <span>presidente@agr.go.gov.br</span>
+            </div>
+            <div class="detail-item">
+              <strong>Telefone:</strong>
+              <span>(62) 3201-0001</span>
+            </div>
+            <div class="detail-item">
+              <strong>Formação:</strong>
+              <span>Universidade Federal de Goiás (UFG)</span>
+            </div>
+            <div class="detail-item">
+              <strong>Experiência:</strong>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="profile-bio">
+          <h3>Biografia</h3>
+          <p>Wagner Oliveira Gomes é engenheiro eletricista pela Universidade Federal de Goiás (UFG), com pós-graduação em telecomunicações pela Universidade de Brasília (UnB), Master´s Certificate – Project Management pela George Washington University (GWU) e mestre em gestão da qualidade pela Universidade de Campinas (Unicamp).</p>
+          <p>Iniciou carreira em 1986 como engenheiro na Telegoiás, onde atuou por 12 anos nas áreas de engenharia, planejamento e operações; posteriormente, com a privatização do setor, trabalhou por mais 18 anos na Brasil Telecom/Oi, em estruturas comerciais (soluções corporativas TI/Telecom) para os segmentos governo e privado.</p>
+          <p>Assessorou projetos de parcerias público-privado (PPP) na Goiás Parcerias. No setor elétrico, atuou na diretoria comercial da Cia Energética de Brasília (CEB – Distribuição).</p>
+          <p>No Governo de Goiás, desde 2019, atuou na diretoria de gestão da ABC, foi superintendente de operações e serviços de TI na SEDI, tendo também participado dos conselhos de administração da CELGPAR e do conselho fiscal da Goiás Telecom.</p>
+          <p>Na condição de Presidente do Conselho Regulador será responsável pela condução da agência em suas atribuições de regular, controlar e fiscalizar o transporte rodoviário intermunicipal de passageiros, saneamento básico, recursos hídricos e minerais, gás natural canalizado, parcerias público-privadas, contratos ou parcerias com organizações como OS`s e OSCIP`s, serviços e bens desestatizados e serviços de geração e distribuição de energia elétrica por meio de convênio com a Aneel.</p>
+        </div>
+        
+        <div class="related-profiles">
+          <h3>Equipe Relacionada</h3>
+          <div class="related-grid">
+            <a href="perfil-conselho-regulador.html" class="related-profile">
+              <img src="https://img.icons8.com/?size=100&id=31046&format=png&color=000000" alt="Conselho Regulador">
+              <div class="related-info">
+                <h4>Adriana Souza dos Santos</h4>
+                <p>Conselho Regulador</p>
+              </div>
+            </a>
+            <a href="perfil-ger-gestao-institucional.html" class="related-profile">
+              <img src="https://img.icons8.com/ios-filled/100/000000/user.png" alt="Gerência de Gestão Institucional">
+              <div class="related-info">
+                <h4>Alexandre Márcio Ferraz de Lima</h4>
+                <p>Gerência de Gestão Institucional</p>
+              </div>
+            </a>
+            <a href="perfil-gabinete-presidente.html" class="related-profile">
+              <img src="https://img.icons8.com/?size=100&id=31046&format=png&color=000000" alt="Gabinete do Presidente do Conselho Regulador">
+              <div class="related-info">
+                <h4>Eunice Aparecida de Lima</h4>
+                <p>Gabinete do Presidente do Conselho Regulador</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
@@ -127,7 +234,214 @@
   </div>
   <!-- Notification Toast -->
   <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
+  
+  <style>
+    .profile-section {
+      max-width: 1000px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px;
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 48px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 32px;
+    }
+    .profile-photo-container {
+      flex-shrink: 0;
+    }
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4299e1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-name {
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+      color: #333;
+    }
+    .profile-title {
+      margin: 0 0 8px 0;
+      font-size: 1.3rem;
+      color: #4299e1;
+      font-weight: 600;
+    }
+    .profile-department {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .profile-content {
+      display: grid;
+      gap: 32px;
+    }
+    .profile-details, .profile-bio, .related-profiles {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 32px;
+    }
+    .profile-details h3, .profile-bio h3, .related-profiles h3 {
+      margin: 0 0 24px 0;
+      font-size: 1.4rem;
+      color: #333;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+    }
+    .detail-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+    .detail-item strong {
+      color: #333;
+      font-weight: 600;
+    }
+    .detail-item span {
+      color: #666;
+    }
+    .profile-bio p {
+      margin: 0 0 16px 0;
+      line-height: 1.6;
+      color: #555;
+    }
+    .profile-bio p:last-child {
+      margin-bottom: 0;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .related-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      background: #f8fafc;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .related-profile:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+    .related-profile img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .related-info h4 {
+      margin: 0 0 4px 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .related-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    @media (max-width: 768px) {
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      .profile-name {
+        font-size: 1.6rem;
+      }
+      .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Dark mode */
+    body.dark-mode .profile-header,
+    body.dark-mode .profile-details,
+    body.dark-mode .profile-bio,
+    body.dark-mode .related-profiles {
+      background: #23272f;
+      color: #fff;
+    }
+    body.dark-mode .profile-name {
+      color: #fff;
+    }
+    body.dark-mode .profile-title {
+      color: #4299e1;
+    }
+    body.dark-mode .profile-department {
+      color: #cbd5e0;
+    }
+    body.dark-mode .profile-details h3,
+    body.dark-mode .profile-bio h3,
+    body.dark-mode .related-profiles h3 {
+      color: #fff;
+      border-bottom-color: #4a5568;
+    }
+    body.dark-mode .detail-item {
+      border-bottom-color: #4a5568;
+    }
+    body.dark-mode .detail-item strong {
+      color: #fff;
+    }
+    body.dark-mode .detail-item span {
+      color: #cbd5e0;
+    }
+    body.dark-mode .profile-bio p {
+      color: #cbd5e0;
+    }
+    body.dark-mode .related-profile {
+      background: #2d3748;
+    }
+    body.dark-mode .related-profile:hover {
+      background: #4a5568;
+    }
+    body.dark-mode .related-info h4 {
+      color: #fff;
+    }
+    body.dark-mode .related-info p {
+      color: #cbd5e0;
+    }
+  </style>
+  
   <script>
+    // Performance: Hide loading overlay when page is ready
+    window.addEventListener('load', function() {
+      const loadingOverlay = document.getElementById('loading-overlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.opacity = '0';
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 300);
+      }
+    });
+
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
     const menuDropdown = document.getElementById('menuDropdown');

@@ -12,7 +12,7 @@
         body {
             margin: 0;
             font-size: 20px;
-            background: #1a1a1a; /* Dark background for starry effect */
+            background: #1a1a1a; 
         }
 
         * {
@@ -26,7 +26,7 @@
             justify-content: center;
             height: 100vh;
             background: transparent;
-            color: white; /* White text for contrast on dark background */
+            color: white; 
             font-family: arial, sans-serif;
             overflow: hidden;
         }
@@ -36,7 +36,7 @@
             width: 600px;
             max-width: 100%;
             margin: 20px;
-            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            background: rgba(255, 255, 255, 0.1); 
             padding: 60px 40px;
             text-align: center;
             box-shadow: -10px 10px 67px -12px rgba(0,0,0,0.4);
@@ -120,9 +120,9 @@
 <body>
     <main class="container" id="container">
         <article class="content">
-            <p>Nossa, você se perdeu no limite do universo
+            <p>Parece que você se perdeu no limite do universo
             <p><strong>404</strong></p>
-            <p>Parece que o desenvolvedor foi abduzido, mas não se preocupe você ainda pode se salvar e voltar.</p>
+            <p>E o desenvolvedor foi abduzido, mas não se preocupe você ainda pode voltar e se salvar.</p>
             <p><button onclick="window.location.href='index.html'">Voltar para a página inicial</button></p>
         </article>
     </main>
@@ -143,7 +143,7 @@
 
             const particle = document.createElement('span');
             particle.className = 'particle';
-            particle.textContent = char; // Set particle to either "4" or "0"
+            particle.textContent = char; 
             particle.style.cssText = `
                 top: ${top}%;
                 left: ${left}%;
@@ -156,4 +156,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -3,36 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quem Somos | AGR - Espaço do Colaborador</title>
-  <meta name="description" content="Conheça a Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos. Nossa missão, história e principais serviços.">
-  <meta name="keywords" content="AGR, Agência Goiana de Regulação, Goiás, regulação, controle, fiscalização, serviços públicos">
+  <title>Desenvolvimento de Pessoas - AGR | Portal do Colaborador</title>
+  <meta name="description" content="Programas de desenvolvimento pessoal, treinamentos e capacitação para servidores da AGR.">
+  <meta name="keywords" content="desenvolvimento pessoal, treinamento, capacitação, carreira, AGR, colaborador">
   <meta name="author" content="Agência Goiana de Regulação">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#4299e1">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.agr.go.gov.br/quem-somos.html">
-  <meta property="og:title" content="Quem Somos | AGR - Espaço do Colaborador">
-  <meta property="og:description" content="Conheça a Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos.">
+  <meta property="og:url" content="https://www.agr.go.gov.br/desenvolvimento-pessoas">
+  <meta property="og:title" content="Desenvolvimento de Pessoas - AGR | Portal do Colaborador">
+  <meta property="og:description" content="Programas de desenvolvimento pessoal, treinamentos e capacitação para servidores da AGR.">
   <meta property="og:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
   
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.agr.go.gov.br/quem-somos.html">
-  <meta property="twitter:title" content="Quem Somos | AGR - Espaço do Colaborador">
-  <meta property="twitter:description" content="Conheça a Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos.">
-  <meta property="twitter:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
-
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desenvolvimento de Pessoas - AGR | Portal do Colaborador">
+  <meta name="twitter:description" content="Programas de desenvolvimento pessoal, treinamentos e capacitação para servidores da AGR.">
+  <meta name="twitter:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
+  
   <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="Banners/logo-azul.png">
   <link rel="icon" type="image/png" sizes="32x32" href="Banners/logo-azul.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="Banners/logo-azul.png">
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
   
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -58,7 +52,9 @@
 
   <header class="banner" role="banner">
     <div class="header-left">
-      <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      <a href="index.html">
+        <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      </a>
     </div>
     <div class="header-right">
       <nav class="nav-banner" aria-label="Navegação principal">
@@ -66,21 +62,25 @@
         <button class="nav-btn" type="button" aria-label="Projetos" tabindex="0">PROJETOS</button>
         <button class="nav-btn" type="button" aria-label="Pessoas" tabindex="0">PESSOAS</button>
       </nav>
-      <a href="#menu" class="login-icon" id="menuHamburger" title="Menu" tabindex="0" aria-label="Abrir menu">
+      <a href="#menu" class="login-icon" id="menuHamburger" title="Menu" tabindex="0" aria-label="Abrir menu" aria-expanded="false">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect y="6" width="28" height="2" rx="1" fill="black"/>
-          <rect y="13" width="28" height="2" rx="1" fill="black"/>
-          <rect y="20" width="28" height="2" rx="1" fill="black"/>
+          <rect y="6" width="28" height="2" rx="1" fill="currentColor"/>
+          <rect y="13" width="28" height="2" rx="1" fill="currentColor"/>
+          <rect y="20" width="28" height="2" rx="1" fill="currentColor"/>
         </svg>
       </a>
-      <div class="menu-dropdown" id="menuDropdown" aria-label="Menu de opções">
-        <button onclick="alert('Login não implementado ainda')" aria-label="Login">
+      <div class="menu-dropdown" id="menuDropdown" aria-label="Menu de opções" role="menu">
+        <button onclick="handleLogin()" aria-label="Login" role="menuitem">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 12H3M12 5l7 7-7 7"/></svg>
           Login
         </button>
-        <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro">
+        <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro" role="menuitem">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           Modo Escuro
+        </button>
+        <button onclick="showNotifications()" aria-label="Notificações" role="menuitem">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notificações
         </button>
       </div>
     </div>
@@ -98,44 +98,214 @@
     <nav class="breadcrumb" aria-label="Navegação breadcrumb">
       <ol class="breadcrumb-list">
         <li class="breadcrumb-item"><a href="index.html">Início</a></li>
-        <li class="breadcrumb-item" aria-current="page">Quem Somos</li>
+        <li class="breadcrumb-item" aria-current="page">Desenvolvimento de Pessoas</li>
       </ol>
     </nav>
 
-    <section class="intro-section">
-      <img src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/little-banner.png?raw=true" alt="Banner AGR" class="little-banner-img">
-      <p class="intro-text intro-text-main">A Agência Goiana de Regulação</p>
-      <p class="intro-text">Seja bem-vindo à Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos – AGR. Instituída pela Lei nº 13.569/1999, a AGR é uma autarquia estadual sob regime especial, vinculada à Secretaria da Administração (Sead), com personalidade jurídica de direito público e autonomia técnico-funcional, administrativa e financeira. Atua com poder de polícia, assegurando a prestação de serviços públicos com qualidade, segurança e respeito aos direitos dos usuários.</p>
-      <p class="intro-text">Nossa missão é regular, controlar e fiscalizar serviços essenciais à população goiana, como o transporte rodoviário intermunicipal de passageiros, saneamento básico, recursos hídricos e minerais. Também acompanhamos contratos e parcerias com entidades do terceiro setor, como Organizações Sociais (OSs) e Organizações da Sociedade Civil de Interesse Público (OSCIPs), além de bens e serviços desestatizados, a exemplo dos terminais rodoviários. Por meio de convênio com a Agência Nacional de Energia Elétrica (Aneel), exercemos ainda a fiscalização dos serviços de energia elétrica no Estado de Goiás.</p>
-      <p class="intro-text">A AGR trabalha com compromisso e transparência, buscando garantir o equilíbrio entre o interesse público, os direitos dos usuários e a qualidade dos serviços prestados por concessionárias, permissionárias e demais parceiros da administração pública.</p>
-      <section class="icones" aria-label="Quem somos">
-        <div class="icone">
-          <a href="integrantes-da-agr.html" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/crowd.png" alt="Integrantes da AGR">
-            <span>Integrantes da AGR</span>
-          </a>
+    <div class="ferias-central">
+      <h1 class="main-title">Desenvolvimento e Capacitação</h1>
+      <p>Acesse recursos e programas para seu crescimento profissional na AGR.</p>
+    </div>
+  
+    <div class="icones-ferias">
+      <div class="icone">
+        <a href="#treinamentos" class="icone-link" aria-label="Treinamentos e Capacitação">
+          <img src="/assets/training.png" alt="Treinamentos e Capacitação" loading="lazy">
+          <span>Treinamentos</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#carreira" class="icone-link" aria-label="Desenvolvimento de Carreira">
+          <img src="/assets/career.png" alt="Desenvolvimento de Carreira" loading="lazy">
+          <span>Carreira</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#avaliacao" class="icone-link" aria-label="Avaliação de Desempenho">
+          <img src="/assets/evaluation.png" alt="Avaliação de Desempenho" loading="lazy">
+          <span>Avaliação</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#certificacoes" class="icone-link" aria-label="Certificações">
+          <img src="/assets/certification.png" alt="Certificações" loading="lazy">
+          <span>Certificações</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#eventos" class="icone-link" aria-label="Eventos e Palestras">
+          <img src="/assets/events.png" alt="Eventos e Palestras" loading="lazy">
+          <span>Eventos</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#recursos" class="icone-link" aria-label="Biblioteca de Recursos">
+          <img src="/assets/resources.png" alt="Biblioteca de Recursos" loading="lazy">
+          <span>Recursos</span>
+        </a>
+      </div>
+    </div>
+  
+    <section id="treinamentos" class="info-section">
+      <h2>Treinamentos e Capacitação</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Cursos Disponíveis
+          </h3>
+          <p>Programa de capacitação contínua para desenvolvimento profissional dos servidores.</p>
+          <button class="btn-primary" onclick="viewCourses()" aria-label="Ver cursos disponíveis">Ver cursos disponíveis</button>
         </div>
-        <div class="icone">
-          <a href="https://goias.gov.br/agr/a-agencia/" target="_blank" rel="noopener" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/book.png" alt="História da AGR">
-            <span>História da AGR</span>
-          </a>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Programa de Mentoria
+          </h3>
+          <p>Programa de mentoria para desenvolvimento de carreira e crescimento profissional.</p>
+          <button class="btn-secondary" onclick="viewMentorship()" aria-label="Ver programa de mentoria">Ver programa de mentoria</button>
         </div>
-        <div class="icone">
-          <a href="https://goias.gov.br/agr/wp-content/uploads/sites/43/2025/05/Planejamento_estrategico_2025_2026.pdf" target="_blank" rel="noopener" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/strategy-board.png" alt="Planejamento Estratégico">
-            <span>Planejamento Estratégico</span>
-          </a>
-        </div>
-        <div class="icone">
-          <a href="https://goias.gov.br/agr/" target="_blank" rel="noopener" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/process.png" alt="Principais serviços da AGR">
-            <span>Principais serviços da AGR</span>
-          </a>
-        </div>
-      </section>
+      </div>
     </section>
-  </main>
+  
+    <section id="carreira" class="info-section">
+      <h2>Desenvolvimento de Carreira</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            Plano de Carreira
+          </h3>
+          <p>Orientação para desenvolvimento de carreira e progressão funcional.</p>
+          <button class="btn-primary" onclick="viewCareerPlan()" aria-label="Ver plano de carreira">Ver plano de carreira</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            Mobilidade Funcional
+          </h3>
+          <p>Informações sobre processos de mobilidade e progressão na carreira.</p>
+          <button class="btn-secondary" onclick="viewMobility()" aria-label="Ver mobilidade funcional">Ver mobilidade funcional</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="avaliacao" class="info-section">
+      <h2>Avaliação de Desempenho</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+            </svg>
+            Sistema de Avaliação
+          </h3>
+          <p>Processo de avaliação de desempenho para desenvolvimento profissional.</p>
+          <button class="btn-primary" onclick="startEvaluation()" aria-label="Iniciar Avaliação">Iniciar Avaliação</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="certificacoes" class="info-section">
+      <h2>Certificações e Certificados</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7"/>
+            </svg>
+            Certificações Disponíveis
+          </h3>
+          <p>Programas de certificação para validação de competências profissionais.</p>
+          <button class="btn-primary" onclick="viewCertifications()" aria-label="Ver certificações">Ver certificações</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="eventos" class="info-section">
+      <h2>Eventos e Palestras</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            </svg>
+            Próximos Eventos
+          </h3>
+          <p>Workshops, palestras e eventos de desenvolvimento profissional.</p>
+          <button class="btn-secondary" onclick="viewEvents()" aria-label="Ver eventos">Ver eventos</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="recursos" class="info-section">
+      <h2>Biblioteca de Recursos</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            Materiais de Apoio
+          </h3>
+          <p>E-books, vídeos e artigos sobre desenvolvimento pessoal e profissional.</p>
+          <button class="btn-primary" onclick="viewResources()" aria-label="Ver recursos">Ver recursos</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="contato" class="info-section">
+      <h2>Contato e Suporte</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+            Setor de Desenvolvimento de Pessoas
+          </h3>
+          <p>Telefone: (62) 3226-6436<br>Email: desenvolvimento.agr@goias.gov.br</p>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Agendamento de Consultoria
+          </h3>
+          <p>Agende uma consultoria individual sobre desenvolvimento de carreira.</p>
+          <button class="btn-primary" onclick="scheduleConsultation()" aria-label="Agendar Consultoria">Agendar Consultoria</button>
+        </div>
+      </div>
+    </section>
+  
+    <section class="intro-section">
+      <div class="alert alert-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <div>
+          <strong>Importante:</strong> Mantenha seus dados de acesso seguros e não compartilhe com terceiros.
+        </div>
+      </div>
+    </section>
+  </main>   
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">
       <div class="footer-section">
@@ -201,10 +371,57 @@
       </svg>
     </button>
   </div>
-
   <!-- Notification Toast -->
   <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
+
   <script>
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', function() {
+      hideLoadingOverlay();
+      setupBackToTop();
+      setupNotifications();
+      setupGamification();
+      setupAnalytics();
+      registerServiceWorker();
+    });
+
+    // Page-specific functions
+    function viewCourses() {
+      showNotification('Carregando cursos disponíveis...', 'info');
+    }
+
+    function viewMentorship() {
+      showNotification('Abrindo programa de mentoria...', 'info');
+    }
+
+    function viewCareerPlan() {
+      showNotification('Carregando plano de carreira...', 'info');
+    }
+
+    function viewMobility() {
+      showNotification('Abrindo informações sobre mobilidade funcional...', 'info');
+    }
+
+    function startEvaluation() {
+      showNotification('Iniciando processo de avaliação...', 'info');
+    }
+
+    function viewCertifications() {
+      showNotification('Carregando certificações disponíveis...', 'info');
+    }
+
+    function viewEvents() {
+      showNotification('Carregando eventos...', 'info');
+    }
+
+    function viewResources() {
+      showNotification('Abrindo biblioteca de recursos...', 'info');
+    }
+
+    function scheduleConsultation() {
+      showNotification('Abrindo agenda para consultoria...', 'info');
+    }
+
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
     const menuDropdown = document.getElementById('menuDropdown');
@@ -259,10 +476,6 @@
       toggleDarkMode();
     });
 
-    // Dark mode automático pelo sistema
-    //if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      //document.body.classList.add('dark-mode');
-    //}
     // Acessibilidade: navegação por teclado
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Tab') {
@@ -317,25 +530,10 @@
       }
     }
 
-    // Gamification: Progress tracking
-    function updateProgress() {
-      const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
-      const totalPages = 15;
-      const progress = Math.round((visitedPages.length / totalPages) * 100);
-      
-      // Track page visit
-      const currentPage = 'quem-somos';
-      if (!visitedPages.includes(currentPage)) {
-        visitedPages.push(currentPage);
-        localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-      }
-    }
-    updateProgress();
-
     // Analytics: Track page views
     if (typeof gtag !== 'undefined') {
       gtag('event', 'page_view', {
-        'page_title': 'Quem Somos',
+        'page_title': 'Desenvolvimento de Pessoas',
         'page_location': window.location.href
       });
     }

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Folha de Pagamento - AGR | Portal do Colaborador</title>
-  <meta name="description" content="Acesse sua folha de pagamento, contracheques, benefícios e informações salariais da AGR.">
-  <meta name="keywords" content="folha pagamento, contracheque, salário, benefícios, AGR, colaborador">
+  <title>Desligamento - AGR | Portal do Colaborador</title>
+  <meta name="description" content="Informações sobre processo de desligamento dos servidores da AGR.">
+  <meta name="keywords" content="desligamento, demissão, exoneração, servidor público, AGR, colaborador">
   <meta name="author" content="Agência Goiana de Regulação">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#4299e1">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.agr.go.gov.br/folha-pagamento">
-  <meta property="og:title" content="Folha de Pagamento - AGR | Portal do Colaborador">
-  <meta property="og:description" content="Acesse sua folha de pagamento, contracheques e informações salariais.">
+  <meta property="og:url" content="https://www.agr.go.gov.br/desligamento">
+  <meta property="og:title" content="Desligamento - AGR | Portal do Colaborador">
+  <meta property="og:description" content="Informações sobre processo de desligamento dos servidores da AGR.">
   <meta property="og:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
   
   <!-- PWA Manifest -->
@@ -80,7 +80,6 @@
     </div>
   </header>
   <hr class="custom-hr" />
-  
   <div class="voltar-container">
     <button class="btn-voltar-fixo" onclick="window.history.back()" title="Voltar">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,162 +87,235 @@
       </svg>
     </button>
   </div>
-
   <main id="main-content" role="main">
+     <!-- Breadcrumb -->
+     <nav class="breadcrumb" aria-label="Navegação breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+        <li class="breadcrumb-item" aria-current="page">Quem Somos</li>
+      </ol>
+    </nav>
+    
     <div class="ferias-central">
-      <h1 class="main-title">Folha de Pagamento</h1>
-      <p>Acesse as informações mais importantes que envolvem seu pagamento.</p>
+      <h1 class="main-title">Desligamento</h1>
+      <p>Acesse informações sobre o processo de desligamento e direitos associados como servidor da AGR.</p>
     </div>
-
+  
     <div class="icones-ferias">
       <div class="icone">
-        <a href="demonstrativos-financeiros.html" class="icone-link" aria-label="Demonstrativos Financeiros">
-          <img src="https://img.icons8.com/ios-filled/100/000000/bar-chart.png" alt="Demonstrativos Financeiros" loading="lazy">
-          <span>Demonstrativos Financeiros</span>
+        <a href="#tipos" class="icone-link" aria-label="Tipos de Desligamento">
+          <img src="/assets/exoneration.png" alt="Tipos de Desligamento" loading="lazy">
+          <span>Tipos</span>
         </a>
       </div>
       <div class="icone">
-        <a href="descontos-obrigatorios.html" class="icone-link" aria-label="Descontos Obrigatórios">
-          <img src="https://img.icons8.com/ios-filled/100/000000/expense.png" alt="Descontos Obrigatórios" loading="lazy">
-          <span>Descontos Obrigatórios</span>
+        <a href="#processo" class="icone-link" aria-label="Processo de Desligamento">
+          <img src="/assets/procedures.png" alt="Processo de Desligamento" loading="lazy">
+          <span>Processo</span>
         </a>
       </div>
       <div class="icone">
-        <a href="formularios.html" class="icone-link" aria-label="Formulários">
-          <img src="https://img.icons8.com/ios-filled/100/000000/form.png" alt="Formulários" loading="lazy">
-          <span>Formulários</span>
+        <a href="#acertos" class="icone-link" aria-label="Acertos Finais">
+          <img src="/assets/severance.png" alt="Acertos Finais" loading="lazy">
+          <span>Acertos</span>
         </a>
       </div>
       <div class="icone">
-        <a href="consignacao-de-salario.html" class="icone-link" aria-label="Consignação">
-          <img src="https://img.icons8.com/ios-filled/100/000000/bank-cards.png" alt="Consignação de Salário" loading="lazy">
-          <span>Consignação</span>
+        <a href="#beneficios" class="icone-link" aria-label="Benefícios Pós-Desligamento">
+          <img src="/assets/post-benefits.png" alt="Benefícios Pós-Desligamento" loading="lazy">
+          <span>Benefícios</span>
         </a>
       </div>
-</div>
-
-    <section id="contracheque" class="info-section">
-      <h2>Contracheque</h2>
+      <div class="icone">
+        <a href="#certidoes" class="icone-link" aria-label="Certidões e Declarações">
+          <img src="/assets/certificates.png" alt="Certidões e Declarações" loading="lazy">
+          <span>Certidões</span>
+        </a>
+      </div>
+    </div>
+  
+    <section id="tipos" class="info-section">
+      <h2>Tipos de Desligamento</h2>
       <div class="steps-container">
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
               <polyline points="14,2 14,8 20,8"/>
             </svg>
-            Acesse seu Contracheque diretamente
+            Exoneração
           </h3>
-          <p>Acesse seu contracheque do mês atual com todos os detalhes de vencimentos e descontos.</p>
-          <button class="btn-primary" onclick="downloadContracheque()">Baixar PDF</button>
-          <a href="https://www.go.gov.br/spr/sead/consultar-contracheque" target="_blank" rel="noopener noreferrer" class="cta-button">Consulte seu Contracheque</a>
+          <p>Informações sobre exoneração de cargo público.</p>
+          <button class="btn-primary" onclick="viewExoneration()" aria-label="Ver exoneração">Ver exoneração</button>
         </div>
-        
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
             </svg>
-            Ficha Financeira Anual
+            Demissão
           </h3>
-          <p>Consulte sua Ficha Financeira Anual </p>
-          <a href="https://www.go.gov.br/servicos-digitais/sead/consultar-ficha-financeira-anual/" target="_blank" rel="noopener noreferrer" class="cta-button">Acesse sua Ficha Financeira Anual</a>
-
+          <p>Informações sobre demissão por justa causa.</p>
+          <button class="btn-secondary" onclick="viewDismissal()" aria-label="Ver demissão">Ver demissão</button>
         </div>
       </div>
     </section>
-
+  
+    <section id="processo" class="info-section">
+      <h2>Processo de Desligamento</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7"/>
+            </svg>
+            Procedimentos
+          </h3>
+          <p>Passo a passo do processo de desligamento.</p>
+          <button class="btn-primary" onclick="viewProcedures()" aria-label="Ver procedimentos">Ver procedimentos</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7"/>
+            </svg>
+            Documentação
+          </h3>
+          <p>Documentos necessários para o desligamento.</p>
+          <button class="btn-secondary" onclick="viewDocuments()" aria-label="Ver documentação">Ver documentação</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="acertos" class="info-section">
+      <h2>Acertos Finais</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Verbas Rescisórias
+          </h3>
+          <p>Informações sobre verbas rescisórias e acertos finais.</p>
+          <button class="btn-primary" onclick="viewSeverancePay()" aria-label="Ver verbas rescisórias">Ver verbas rescisórias</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Restituições
+          </h3>
+          <p>Restituições e devoluções necessárias.</p>
+          <button class="btn-secondary" onclick="viewRefunds()" aria-label="Ver restituições">Ver restituições</button>
+        </div>
+      </div>
+    </section>
+  
     <section id="beneficios" class="info-section">
-      <h2>Benefícios Salariais</h2>
+      <h2>Benefícios Pós-Desligamento</h2>
       <div class="steps-container">
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            Adicionais
+            Seguro Desemprego
           </h3>
-          <p>Adicional de qualificação, gratificação de atividade, e outros benefícios previstos em lei.</p>
+          <p>Informações sobre seguro desemprego para servidores.</p>
+          <button class="btn-primary" onclick="viewUnemploymentInsurance()" aria-label="Ver seguro desemprego">Ver seguro desemprego</button>
         </div>
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            Indenizações
+            Benefícios Previdenciários
           </h3>
-          <p>Auxílio alimentação, auxílio transporte e outras indenizações previstas no estatuto.</p>
+          <p>Benefícios previdenciários após o desligamento.</p>
+          <button class="btn-secondary" onclick="viewPensionBenefits()" aria-label="Ver benefícios">Ver benefícios</button>
         </div>
       </div>
     </section>
-
-    <section id="descontos" class="info-section">
-      <h2>Descontos e Retenções</h2>
+  
+    <section id="certidoes" class="info-section">
+      <h2>Certidões e Declarações</h2>
       <div class="steps-container">
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
             </svg>
-            Previdência
+            Certidão de Tempo de Contribuição
           </h3>
-          <p>Contribuição previdenciária obrigatória conforme legislação vigente.</p>
+          <p>Solicitação de certidão de tempo de contribuição.</p>
+          <button class="btn-primary" onclick="requestContributionCertificate()" aria-label="Solicitar certidão">Solicitar certidão</button>
         </div>
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
             </svg>
-            Imposto de Renda
+            Declaração de Desligamento
           </h3>
-          <p>Retenção na fonte do Imposto de Renda conforme tabela progressiva.</p>
-        </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            Outros Descontos
-          </h3>
-          <p>Descontos judiciais, consignações e outros descontos autorizados.</p>
+          <p>Declaração de desligamento para outros órgãos.</p>
+          <button class="btn-secondary" onclick="requestDischargeDeclaration()" aria-label="Solicitar declaração">Solicitar declaração</button>
         </div>
       </div>
     </section>
-
-    <section id="historico" class="info-section">
-      <h2>Histórico de Pagamentos</h2>
+  
+    <section id="contato" class="info-section">
+      <h2>Contato e Suporte</h2>
       <div class="steps-container">
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
             </svg>
-            Últimos 12 Meses
+            Setor de Recursos Humanos
           </h3>
-          <p>Visualize o histórico completo dos últimos 12 meses de pagamentos.</p>
-          <button class="btn-secondary" onclick="viewPaymentHistory()">Ver Histórico</button>
+          <p>Telefone: (62) 3226-6436<br>Email: rh.agr@goias.gov.br</p>
         </div>
         <div class="step-card">
           <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            Relatórios
+            Assessoria Jurídica
           </h3>
-          <p>Gere relatórios personalizados de pagamentos por período específico.</p>
-          <button class="btn-secondary" onclick="generateReport()">Gerar Relatório</button>
+          <p>Para dúvidas sobre processo de desligamento.</p>
+          <button class="btn-primary" onclick="contactLegal()" aria-label="Contatar assessoria jurídica">Contatar assessoria jurídica</button>
         </div>
       </div>
     </section>
-    
+  
     <section class="intro-section">
-    <div class="alert alert-warning">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-      <div>
-        <strong>Importante:</strong> As informações da folha de pagamento são sigilosas. Mantenha seus dados de acesso seguros e não compartilhe com terceiros.
+      <div class="alert alert-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <div>
+          <strong>Importante:</strong> Mantenha seus dados de acesso seguros e não compartilhe com terceiros.
+        </div>
       </div>
-    </div>
-  </section>
-  </main>
+    </section>
+  </main>   
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">
       <div class="footer-section">
@@ -324,28 +396,50 @@
     });
 
     // Page-specific functions
-    function downloadContracheque() {
-      showNotification('Download do contracheque iniciado!', 'success');
-      // Simulate download
-      setTimeout(() => {
-        showNotification('Contracheque baixado com sucesso!', 'success');
-      }, 2000);
+    function viewExoneration() {
+      showNotification('Carregando informações sobre exoneração...', 'info');
     }
 
-    function viewHistory() {
-      showNotification('Abrindo histórico de contracheques...', 'info');
+    function viewDismissal() {
+      showNotification('Abrindo informações sobre demissão...', 'info');
     }
 
-    function viewPaymentHistory() {
-      showNotification('Carregando histórico de pagamentos...', 'info');
+    function viewProcedures() {
+      showNotification('Carregando procedimentos de desligamento...', 'info');
     }
 
-    function generateReport() {
-      showNotification('Gerando relatório personalizado...', 'info');
-      setTimeout(() => {
-        showNotification('Relatório gerado com sucesso!', 'success');
-      }, 3000);
+    function viewDocuments() {
+      showNotification('Abrindo documentação necessária...', 'info');
     }
+
+    function viewSeverancePay() {
+      showNotification('Carregando informações sobre verbas rescisórias...', 'info');
+    }
+
+    function viewRefunds() {
+      showNotification('Abrindo informações sobre restituições...', 'info');
+    }
+
+    function viewUnemploymentInsurance() {
+      showNotification('Carregando informações sobre seguro desemprego...', 'info');
+    }
+
+    function viewPensionBenefits() {
+      showNotification('Abrindo benefícios previdenciários...', 'info');
+    }
+
+    function requestContributionCertificate() {
+      showNotification('Solicitando certidão de tempo de contribuição...', 'info');
+    }
+
+    function requestDischargeDeclaration() {
+      showNotification('Solicitando declaração de desligamento...', 'info');
+    }
+
+    function contactLegal() {
+      showNotification('Abrindo contato com assessoria jurídica...', 'info');
+    }
+
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
     const menuDropdown = document.getElementById('menuDropdown');
@@ -400,10 +494,6 @@
       toggleDarkMode();
     });
 
-    // Dark mode automático pelo sistema
-    //if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      //document.body.classList.add('dark-mode');
-    //}
     // Acessibilidade: navegação por teclado
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Tab') {
@@ -461,7 +551,7 @@
     // Analytics: Track page views
     if (typeof gtag !== 'undefined') {
       gtag('event', 'page_view', {
-        'page_title': 'Quem Somos',
+        'page_title': 'Desligamento',
         'page_location': window.location.href
       });
     }
@@ -493,6 +583,4 @@
     }
   </script>
 </body>
-</html>  
-
-    
+</html> 

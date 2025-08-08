@@ -3,36 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quem Somos | AGR - Espaço do Colaborador</title>
-  <meta name="description" content="Conheça a Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos. Nossa missão, história e principais serviços.">
-  <meta name="keywords" content="AGR, Agência Goiana de Regulação, Goiás, regulação, controle, fiscalização, serviços públicos">
+  <title>Benefícios e Auxílios - AGR | Portal do Colaborador</title>
+  <meta name="description" content="Informações sobre benefícios, auxílios e vantagens para servidores da AGR.">
+  <meta name="keywords" content="benefícios, auxílios, vantagens, servidor público, AGR, colaborador">
   <meta name="author" content="Agência Goiana de Regulação">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#4299e1">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.agr.go.gov.br/quem-somos.html">
-  <meta property="og:title" content="Quem Somos | AGR - Espaço do Colaborador">
-  <meta property="og:description" content="Conheça a Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos.">
+  <meta property="og:url" content="https://www.agr.go.gov.br/beneficios-auxilios">
+  <meta property="og:title" content="Benefícios e Auxílios - AGR | Portal do Colaborador">
+  <meta property="og:description" content="Informações sobre benefícios, auxílios e vantagens para servidores da AGR.">
   <meta property="og:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
   
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.agr.go.gov.br/quem-somos.html">
-  <meta property="twitter:title" content="Quem Somos | AGR - Espaço do Colaborador">
-  <meta property="twitter:description" content="Conheça a Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos.">
-  <meta property="twitter:image" content="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true">
-
   <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="Banners/logo-azul.png">
   <link rel="icon" type="image/png" sizes="32x32" href="Banners/logo-azul.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="Banners/logo-azul.png">
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
   
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -58,7 +46,9 @@
 
   <header class="banner" role="banner">
     <div class="header-left">
-      <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      <a href="index.html">
+        <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      </a>
     </div>
     <div class="header-right">
       <nav class="nav-banner" aria-label="Navegação principal">
@@ -66,21 +56,25 @@
         <button class="nav-btn" type="button" aria-label="Projetos" tabindex="0">PROJETOS</button>
         <button class="nav-btn" type="button" aria-label="Pessoas" tabindex="0">PESSOAS</button>
       </nav>
-      <a href="#menu" class="login-icon" id="menuHamburger" title="Menu" tabindex="0" aria-label="Abrir menu">
+      <a href="#menu" class="login-icon" id="menuHamburger" title="Menu" tabindex="0" aria-label="Abrir menu" aria-expanded="false">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect y="6" width="28" height="2" rx="1" fill="black"/>
-          <rect y="13" width="28" height="2" rx="1" fill="black"/>
-          <rect y="20" width="28" height="2" rx="1" fill="black"/>
+          <rect y="6" width="28" height="2" rx="1" fill="currentColor"/>
+          <rect y="13" width="28" height="2" rx="1" fill="currentColor"/>
+          <rect y="20" width="28" height="2" rx="1" fill="currentColor"/>
         </svg>
       </a>
-      <div class="menu-dropdown" id="menuDropdown" aria-label="Menu de opções">
-        <button onclick="alert('Login não implementado ainda')" aria-label="Login">
+      <div class="menu-dropdown" id="menuDropdown" aria-label="Menu de opções" role="menu">
+        <button onclick="handleLogin()" aria-label="Login" role="menuitem">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 12H3M12 5l7 7-7 7"/></svg>
           Login
         </button>
-        <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro">
+        <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro" role="menuitem">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           Modo Escuro
+        </button>
+        <button onclick="showNotifications()" aria-label="Notificações" role="menuitem">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Notificações
         </button>
       </div>
     </div>
@@ -94,48 +88,226 @@
     </button>
   </div>
   <main id="main-content" role="main">
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb" aria-label="Navegação breadcrumb">
+     <!-- Breadcrumb -->
+     <nav class="breadcrumb" aria-label="Navegação breadcrumb">
       <ol class="breadcrumb-list">
         <li class="breadcrumb-item"><a href="index.html">Início</a></li>
         <li class="breadcrumb-item" aria-current="page">Quem Somos</li>
       </ol>
     </nav>
-
-    <section class="intro-section">
-      <img src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/little-banner.png?raw=true" alt="Banner AGR" class="little-banner-img">
-      <p class="intro-text intro-text-main">A Agência Goiana de Regulação</p>
-      <p class="intro-text">Seja bem-vindo à Agência Goiana de Regulação, Controle e Fiscalização de Serviços Públicos – AGR. Instituída pela Lei nº 13.569/1999, a AGR é uma autarquia estadual sob regime especial, vinculada à Secretaria da Administração (Sead), com personalidade jurídica de direito público e autonomia técnico-funcional, administrativa e financeira. Atua com poder de polícia, assegurando a prestação de serviços públicos com qualidade, segurança e respeito aos direitos dos usuários.</p>
-      <p class="intro-text">Nossa missão é regular, controlar e fiscalizar serviços essenciais à população goiana, como o transporte rodoviário intermunicipal de passageiros, saneamento básico, recursos hídricos e minerais. Também acompanhamos contratos e parcerias com entidades do terceiro setor, como Organizações Sociais (OSs) e Organizações da Sociedade Civil de Interesse Público (OSCIPs), além de bens e serviços desestatizados, a exemplo dos terminais rodoviários. Por meio de convênio com a Agência Nacional de Energia Elétrica (Aneel), exercemos ainda a fiscalização dos serviços de energia elétrica no Estado de Goiás.</p>
-      <p class="intro-text">A AGR trabalha com compromisso e transparência, buscando garantir o equilíbrio entre o interesse público, os direitos dos usuários e a qualidade dos serviços prestados por concessionárias, permissionárias e demais parceiros da administração pública.</p>
-      <section class="icones" aria-label="Quem somos">
-        <div class="icone">
-          <a href="integrantes-da-agr.html" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/crowd.png" alt="Integrantes da AGR">
-            <span>Integrantes da AGR</span>
-          </a>
+  
+    <div class="ferias-central">
+      <h1 class="main-title">Benefícios e Auxílios</h1>
+      <p>Acesse informações sobre seus benefícios e auxílios como colaborador da AGR.</p>
+    </div>
+  
+    <div class="icones-ferias">
+      <div class="icone">
+        <a href="#alimentacao" class="icone-link" aria-label="Auxílio Alimentação">
+          <img src="/assets/food.png" alt="Auxílio Alimentação" loading="lazy">
+          <span>Alimentação</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#transporte" class="icone-link" aria-label="Auxílio Transporte">
+          <img src="/assets/transport.png" alt="Auxílio Transporte" loading="lazy">
+          <span>Transporte</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#saude" class="icone-link" aria-label="Plano de Saúde">
+          <img src="/assets/health.png" alt="Plano de Saúde" loading="lazy">
+          <span>Saúde</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#outros" class="icone-link" aria-label="Outros Benefícios">
+          <img src="/assets/gym.png" alt="Outros Benefícios" loading="lazy">
+          <span>Outros</span>
+        </a>
+      </div>
+      <div class="icone">
+        <a href="#solicitacoes" class="icone-link" aria-label="Solicitações e Alterações">
+          <img src="/assets/request.png" alt="Solicitações e Alterações" loading="lazy">
+          <span>Solicitações</span>
+        </a>
+      </div>
+    </div>
+  
+    <section id="alimentacao" class="info-section">
+      <h2>Auxílio Alimentação</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Vale Refeição
+          </h3>
+          <p>Benefício para auxiliar na alimentação dos servidores durante o expediente.</p>
+          <button class="btn-primary" onclick="viewFoodAllowance()" aria-label="Ver detalhes do vale refeição">Ver detalhes do vale refeição</button>
         </div>
-        <div class="icone">
-          <a href="https://goias.gov.br/agr/a-agencia/" target="_blank" rel="noopener" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/book.png" alt="História da AGR">
-            <span>História da AGR</span>
-          </a>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Restaurantes Conveniados
+          </h3>
+          <p>Rede de restaurantes conveniados para utilização do vale refeição.</p>
+          <button class="btn-secondary" onclick="viewPartnerRestaurants()" aria-label="Ver restaurantes conveniados">Ver restaurantes conveniados</button>
         </div>
-        <div class="icone">
-          <a href="https://goias.gov.br/agr/wp-content/uploads/sites/43/2025/05/Planejamento_estrategico_2025_2026.pdf" target="_blank" rel="noopener" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/strategy-board.png" alt="Planejamento Estratégico">
-            <span>Planejamento Estratégico</span>
-          </a>
-        </div>
-        <div class="icone">
-          <a href="https://goias.gov.br/agr/" target="_blank" rel="noopener" class="icone-link">
-            <img src="https://img.icons8.com/ios-filled/100/000000/process.png" alt="Principais serviços da AGR">
-            <span>Principais serviços da AGR</span>
-          </a>
-        </div>
-      </section>
+      </div>
     </section>
-  </main>
+  
+    <section id="transporte" class="info-section">
+      <h2>Auxílio Transporte</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 16V4h16v12M9 22h6m-6-6h6"/>
+            </svg>
+            Vale Transporte
+          </h3>
+          <p>Benefício para auxiliar nos custos de transporte público.</p>
+          <button class="btn-primary" onclick="viewTransportAllowance()" aria-label="Ver detalhes do vale transporte">Ver detalhes do vale transporte</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 16V4h16v12M9 22h6m-6-6h6"/>
+            </svg>
+            Estacionamento
+          </h3>
+          <p>Informações sobre estacionamento para servidores.</p>
+          <button class="btn-secondary" onclick="viewParking()" aria-label="Ver informações de estacionamento">Ver informações de estacionamento</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="saude" class="info-section">
+      <h2>Plano de Saúde</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            Cobertura Médica
+          </h3>
+          <p>Informações sobre cobertura médica e odontológica.</p>
+          <button class="btn-primary" onclick="viewHealthPlan()" aria-label="Ver detalhes do plano de saúde">Ver detalhes do plano de saúde</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            Rede Credenciada
+          </h3>
+          <p>Hospitais, clínicas e profissionais credenciados.</p>
+          <button class="btn-secondary" onclick="viewNetwork()" aria-label="Ver rede credenciada">Ver rede credenciada</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="outros" class="info-section">
+      <h2>Outros Benefícios</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Gympass
+          </h3>
+          <p>Benefício para acesso a academias e atividades físicas.</p>
+          <button class="btn-primary" onclick="viewGympass()" aria-label="Ver detalhes do Gympass">Ver detalhes do Gympass</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Descontos Corporativos
+          </h3>
+          <p>Descontos em estabelecimentos parceiros.</p>
+          <button class="btn-secondary" onclick="viewCorporateDiscounts()" aria-label="Ver descontos disponíveis">Ver descontos disponíveis</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="solicitacoes" class="info-section">
+      <h2>Solicitações e Alterações</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+            </svg>
+            Solicitar Benefício
+          </h3>
+          <p>Formulários para solicitação de novos benefícios.</p>
+          <button class="btn-primary" onclick="requestBenefit()" aria-label="Solicitar benefício">Solicitar benefício</button>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+            </svg>
+            Alterar Benefício
+          </h3>
+          <p>Procedimentos para alteração de benefícios existentes.</p>
+          <button class="btn-secondary" onclick="changeBenefit()" aria-label="Alterar benefício">Alterar benefício</button>
+        </div>
+      </div>
+    </section>
+  
+    <section id="contato" class="info-section">
+      <h2>Contato e Suporte</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+            Setor de Benefícios
+          </h3>
+          <p>Telefone: (62) 3226-6436<br>Email: beneficios.agr@goias.gov.br</p>
+        </div>
+        <div class="step-card">
+          <h3>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Suporte RH
+          </h3>
+          <p>Para dúvidas sobre benefícios e auxílios.</p>
+          <button class="btn-primary" onclick="contactHR()" aria-label="Contatar RH">Contatar RH</button>
+        </div>
+      </div>
+    </section>
+  
+    <section class="intro-section">
+      <div class="alert alert-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <div>
+          <strong>Importante:</strong> Mantenha seus dados de acesso seguros e não compartilhe com terceiros.
+        </div>
+      </div>
+    </section>
+  </main>   
   <footer class="footer-banner" aria-label="Rodapé" role="contentinfo">
     <div class="footer-content">
       <div class="footer-section">
@@ -201,10 +373,65 @@
       </svg>
     </button>
   </div>
-
   <!-- Notification Toast -->
   <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
+
   <script>
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', function() {
+      hideLoadingOverlay();
+      setupBackToTop();
+      setupNotifications();
+      setupGamification();
+      setupAnalytics();
+      registerServiceWorker();
+    });
+
+    // Page-specific functions
+    function viewFoodAllowance() {
+      showNotification('Carregando detalhes do vale refeição...', 'info');
+    }
+
+    function viewPartnerRestaurants() {
+      showNotification('Abrindo restaurantes conveniados...', 'info');
+    }
+
+    function viewTransportAllowance() {
+      showNotification('Carregando detalhes do vale transporte...', 'info');
+    }
+
+    function viewParking() {
+      showNotification('Abrindo informações de estacionamento...', 'info');
+    }
+
+    function viewHealthPlan() {
+      showNotification('Carregando detalhes do plano de saúde...', 'info');
+    }
+
+    function viewNetwork() {
+      showNotification('Abrindo rede credenciada...', 'info');
+    }
+
+    function viewGympass() {
+      showNotification('Carregando detalhes do Gympass...', 'info');
+    }
+
+    function viewCorporateDiscounts() {
+      showNotification('Abrindo descontos corporativos...', 'info');
+    }
+
+    function requestBenefit() {
+      showNotification('Abrindo formulário de solicitação...', 'info');
+    }
+
+    function changeBenefit() {
+      showNotification('Carregando formulário de alteração...', 'info');
+    }
+
+    function contactHR() {
+      showNotification('Abrindo contato com RH...', 'info');
+    }
+
     // MENU SUSPENSO HAMBURGER
     const menuHamburger = document.getElementById('menuHamburger');
     const menuDropdown = document.getElementById('menuDropdown');
@@ -259,10 +486,6 @@
       toggleDarkMode();
     });
 
-    // Dark mode automático pelo sistema
-    //if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      //document.body.classList.add('dark-mode');
-    //}
     // Acessibilidade: navegação por teclado
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Tab') {
@@ -317,25 +540,10 @@
       }
     }
 
-    // Gamification: Progress tracking
-    function updateProgress() {
-      const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
-      const totalPages = 15;
-      const progress = Math.round((visitedPages.length / totalPages) * 100);
-      
-      // Track page visit
-      const currentPage = 'quem-somos';
-      if (!visitedPages.includes(currentPage)) {
-        visitedPages.push(currentPage);
-        localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-      }
-    }
-    updateProgress();
-
     // Analytics: Track page views
     if (typeof gtag !== 'undefined') {
       gtag('event', 'page_view', {
-        'page_title': 'Quem Somos',
+        'page_title': 'Benefícios e Auxílios',
         'page_location': window.location.href
       });
     }

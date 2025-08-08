@@ -134,6 +134,7 @@
   <hr class="custom-hr" />
 
   <main id="main-content" role="main">
+
     <h1 class="main-title" tabindex="0">Bem-vindo ao Espaço do Colaborador</h1>
 
     <!-- Quick Actions -->
@@ -145,12 +146,12 @@
           </svg>
           Solicitar Férias
         </button>
-        <button class="quick-action-btn" onclick="quickAction('documentos')" aria-label="Ver documentos">
+        <button class="quick-action-btn" onclick="quickAction('documentos')" aria-label="Enviar Atestado">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
             <polyline points="14,2 14,8 20,8"/>
           </svg>
-          Ver Documentos
+          Enviar Atestado
         </button>
         <button class="quick-action-btn" onclick="quickAction('agenda')" aria-label="Ver agenda">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -164,7 +165,7 @@
     <section class="icones" aria-label="Acesso rápido aos serviços">
       <div class="icone">
         <a href="quem-somos.html" class="icone-link" aria-label="Conheça nossa equipe">
-          <img src="https://img.icons8.com/ios-filled/100/000000/user-group-man-man.png" alt="Colaboradores" loading="lazy">
+          <img src="https://img.icons8.com/ios-filled/100/000000/user-group-man-man.png" alt="Quem somos" loading="lazy">
           <span>Quem somos</span>
         </a>
       </div>
@@ -244,12 +245,6 @@
         <a href="beneficios-auxilios.html" class="icone-link" aria-label="Benefícios e auxílios">
           <img src="https://img.icons8.com/ios-filled/100/000000/gift.png" alt="Benefícios e auxílios" loading="lazy">
           <span>Benefícios e Auxílios</span>
-        </a>
-      </div>
-      <div class="icone">
-        <a href="atualizacao-cadastral.html" class="icone-link" aria-label="Atualização cadastral">
-          <img src="https://img.icons8.com/ios-filled/100/000000/form.png" alt="Atualização cadastral" loading="lazy">
-          <span>Atualização Cadastral</span>
         </a>
       </div>
       <div class="icone">
@@ -523,31 +518,7 @@
         top: 0,
         behavior: 'smooth'
       });
-    });
-
-    // Gamification: Progress tracking
-    function updateProgress() {
-      const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
-      const totalPages = 15; // Total number of pages
-      const progress = Math.round((visitedPages.length / totalPages) * 100);
-      
-      const progressFill = document.getElementById('progressFill');
-      const progressText = document.getElementById('progressText');
-      
-      if (progressFill && progressText) {
-        progressFill.style.width = progress + '%';
-        progressText.textContent = progress + '%';
-      }
-    }
-
-    // Track page visit
-    const currentPage = 'index';
-    const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
-    if (!visitedPages.includes(currentPage)) {
-      visitedPages.push(currentPage);
-      localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    }
-    updateProgress();
+    }); 
 
     // Quick actions
     function quickAction(action) {

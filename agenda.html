@@ -94,6 +94,14 @@
     </button>
   </div>
   <main id="main-content" role="main">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Navegação breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+        <li class="breadcrumb-item" aria-current="page">Agenda</li>
+      </ol>
+    </nav>
+
     <section class="calendar-section">
       <h2>Agenda do Mês</h2>
       <div id="calendar"></div>
@@ -309,17 +317,7 @@
     body.dark-mode #eventForm button { background: #2CB67D; color: #fff; }
     body.dark-mode #eventForm button:hover { background: #1e8c5a; }
   </style>
-  <style>
-    .floating-buttons { position: fixed; bottom: 32px; right: 32px; display: flex; flex-direction: column; gap: 16px; z-index: 1200; }
-    .floating-buttons button { width: 56px; height: 56px; border: none; border-radius: 12px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; padding: 0; }
-    .floating-buttons button:focus { outline: 2px solid #2CB67D; }
-    .floating-buttons button:hover { background: #f0f0f0; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
-    .floating-buttons svg { pointer-events: none; }
-    body.dark-mode .floating-buttons button { background: #222; box-shadow: 0 2px 8px rgba(0,0,0,0.32); }
-    body.dark-mode .floating-buttons button:hover { background: #333; }
-    body.dark-mode .floating-buttons svg rect { fill: #fff !important; }
-    body.dark-mode .floating-buttons svg path { fill: #222 !important; }
-  </style>
+  
   <script>
     // Performance: Hide loading overlay when page is ready
     window.addEventListener('load', function() {

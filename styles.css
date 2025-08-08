@@ -448,10 +448,11 @@ h2 {
   box-sizing: border-box;
 }
 
+/* Floating Buttons */
 .floating-buttons {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Space between buttons */
+  gap: 16px;
   position: fixed;
   bottom: 24px;
   right: 24px;
@@ -464,36 +465,55 @@ h2 {
   border: none;
   border-radius: 12px;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s;
-  padding: 0;
 }
+
+.floating-buttons button:hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
 .floating-buttons button:focus {
   outline: 2px solid #2CB67D;
 }
-.floating-buttons button:hover {
-  background: #f0f0f0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-}
+
 .floating-buttons svg {
   pointer-events: none;
 }
-body.dark-mode .floating-buttons button {
-  background: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.32);
+
+/* Dark Mode Button */
+#dark-mode-btn {
+  width: 50px; /* Mesmo tamanho do back-to-top */
+  height: 50px;
+  border: none;
+  border-radius: 50%; /* Formato circular */
+  background: #4299e1; /* Mesmo fundo azul */
+  color: white; /* Cor do ícone */
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3); /* Mesma sombra */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Mesma transição */
 }
-body.dark-mode .floating-buttons button:hover {
-  background: #333;
+
+#dark-mode-btn:hover {
+  background: #3182ce; /* Mesmo hover */
+  transform: translateY(-2px); /* Elevação no hover */
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
 }
-body.dark-mode .floating-buttons svg rect {
-  fill: #fff !important;
+
+#dark-mode-btn:focus {
+  outline: 2px solid #fff; /* Mantém acessibilidade */
 }
-body.dark-mode .floating-buttons svg path {
-  fill: #222 !important;
+
+#dark-mode-btn span {
+  font-size: 2rem; /* Ajusta o tamanho do ícone */
 }
 
 .nav-banner {
@@ -706,10 +726,10 @@ body.dark-mode .custom-hr, body.dark-mode .hr-footer {
 body.dark-mode .btn-voltar-fixo {
   background: #23272f;
   color: #fff;
-  border-color: #2CB67D;
+  border-color: #63b3ed;
 }
 body.dark-mode .btn-voltar-fixo:hover, body.dark-mode .btn-voltar-fixo:focus {
-  background: #2CB67D;
+  background: #63b3ed;
   color: #fff;
 }
 body.dark-mode input, body.dark-mode select, body.dark-mode textarea {
@@ -1265,11 +1285,11 @@ body.dark-mode .section-title, body.dark-mode .main-title {
 #back-to-top-btn {
   position: fixed;
   bottom: 85px;
-  right: 27px;
+  right: 24px;
   width: 50px;
   height: 50px;
   background: #4299e1;
-  color: white;
+  color: black;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -1739,4 +1759,221 @@ body.dark-mode .step-card h3 svg {
 .dark-mode .task-card {
   background: var(--bg-color);
   border-color: var(--border-color);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  padding: 0; 
+  margin: 0 auto;
+  max-width: 1200px;
+  background: transparent;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem; /* Tamanho de fonte um pouco maior para clareza */
+}
+
+.breadcrumb-item {
+  color: #4a5568; /* Cor neutra para itens */
+  font-weight: 500; /* Peso médio para profissionalismo */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg fill='gray' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 0.5rem;
+}
+
+.breadcrumb-item a {
+  color: #4299e1; /* Azul consistente com inline-link */
+  text-decoration: none;
+  border-bottom: 1px solid transparent; /* Borda sutil para hover */
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  padding-bottom: 1px;
+}
+
+.breadcrumb-item a:hover {
+  color: #2b6cb0; /* Tom mais escuro para hover */
+  border-bottom-color: #2b6cb0; /* Sublinhado sutil */
+}
+
+.breadcrumb-item[aria-current="page"] {
+  color: #2d3748; /* Cor mais escura para o item ativo */
+  font-weight: 600; /* Peso maior para destaque */
+  pointer-events: none;
+}
+
+/* Dark Mode */
+body.dark-mode .breadcrumb-item {
+  color: #e2e8f0; /* Cor clara para contraste */
+}
+
+body.dark-mode .breadcrumb-item + .breadcrumb-item::before {
+  color: #a0aec0; /* Mantém o separador claro */
+}
+
+body.dark-mode .breadcrumb-item a {
+  color: #63b3ed; /* Azul claro para modo escuro */
+}
+
+body.dark-mode .breadcrumb-item a:hover {
+  color: #90cdf4; /* Tom mais claro para hover */
+  border-bottom-color: #90cdf4;
+}
+
+body.dark-mode .breadcrumb-item[aria-current="page"] {
+  color: #f7fafc; /* Cor branca para destaque no modo escuro */
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .breadcrumb-list {
+    flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  }
+
+  .breadcrumb-item {
+    font-size: 0.85rem; /* Reduz tamanho da fonte */
+  }
+}
+/* ACORDION*/
+.accordion {
+  max-width: 800px;
+  margin: 2rem auto; /* This centers the accordion horizontally */
+  font-family: 'Inter', sans-serif;
+  text-align: center; /* Centers the text and headers */
+}
+
+.accordion h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-item {
+  margin-bottom: 0.5rem;
+  text-align: left; /* Keeps the content text left-aligned within the centered accordion */
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  color: #000; /* Changed header text color to a blue shade */
+}
+
+.accordion-header:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-header[aria-expanded="true"] {
+  background-color: #d1d1d1;
+}
+
+.accordion-content {
+  display: none;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-radius: 0 0 5px 5px;
+  text-align: left; /* Keeps the content text left-aligned */
+}
+
+.accordion-content ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.accordion-content ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.accordion-content ul li::before {
+  content: "✔";
+  position: absolute;
+  left: -1rem;
+  color: #4299e1; 
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.accordion-content.show {
+  display: block;
+}
+
+body.dark-mode .accordion-header {
+  background-color: #23272f;
+  color: #fff;
+  transition: background-color 0.3s, color 0.2s, transform 0.15s;
+}
+
+body.dark-mode .accordion-header:hover {
+  background-color: #2CB67D;
+  color: #fff;
+}
+
+body.dark-mode .accordion-header[aria-expanded="true"] {
+  background-color: #2CB67D;
+  color: #fff;
+}
+/* Inline Links */
+.inline-link {
+  color: #4299e1; /* Azul profissional, consistente com o tema */
+  text-decoration: none; /* Remove sublinhado padrão */
+  font-weight: 500; /* Peso médio para destacar sem ser muito pesado */
+  border-bottom: 1px solid transparent; /* Borda sutil para hover */
+  transition: color 0.2s ease, border-bottom-color 0.2s ease, transform 0.15s ease; /* Transições suaves */
+  padding-bottom: 1px; /* Espaço para a borda não afetar o layout */
+}
+
+.inline-link:hover {
+  color: #2b6cb0; /* Tom mais escuro para hover */
+  border-bottom-color: #2b6cb0; /* Sublinhado sutil no hover */
+  transform: translateY(-1px); /* Elevação leve para interação */
+}
+
+.inline-link:focus {
+  outline: 2px solid #2CB67D; /* Outline verde para acessibilidade */
+  outline-offset: 2px;
+  border-bottom-color: #2CB67D; /* Sublinhado verde no focus */
+}
+
+/* Dark Mode */
+body.dark-mode .inline-link {
+  color: #63b3ed; /* Azul claro para contraste no modo escuro */
+  border-bottom-color: transparent;
+}
+
+body.dark-mode .inline-link:hover {
+  color: #90cdf4; /* Tom mais claro para hover no modo escuro */
+  border-bottom-color: #90cdf4;
+}
+
+body.dark-mode .inline-link:focus {
+  outline: 2px solid #2CB67D;
+  border-bottom-color: #2CB67D;
 }

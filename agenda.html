@@ -192,30 +192,58 @@
   <!-- Notification Toast -->
   <div id="notification-toast" class="notification-toast" role="alert" aria-live="polite"></div>
   <style>
+    /* Calendar Section */
     .calendar-section {
-      max-width: 500px;
+      max-width: 800px; /* Increased from 500px */
       margin: 48px auto 0 auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      padding: 32px 24px 24px 24px;
+      padding: 40px 32px; /* Slightly increased padding for balance */
+      border-radius: 2rem; /* Matches .icone */
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 
+        0 4px 12px 0 rgba(0, 0, 0, 0.25), 
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    .calendar-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(
+        circle at 10% 10%, 
+        rgba(255, 255, 255, 0.25) 0%, 
+        rgba(255, 255, 255, 0.05) 35%, 
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+
     #calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      gap: 6px;
+      gap: 8px; /* Slightly increased for larger frame */
       margin-top: 16px;
       margin-bottom: 12px;
     }
+
     .calendar-day, .calendar-header {
-      width: 38px;
-      height: 38px;
+      width: 48px; /* Increased from 38px for larger frame */
+      height: 48px; /* Increased from 38px */
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 1.1rem; /* Slightly larger font */
       font-weight: 500;
       cursor: pointer;
       background: #f4f4f4;
@@ -223,30 +251,36 @@
       transition: background 0.2s, color 0.2s;
       position: relative;
     }
+
     .calendar-header {
       background: transparent;
       color: #888;
       font-weight: 700;
       cursor: default;
     }
+
     .calendar-day.today {
       background: #2CB67D;
       color: #fff;
       font-weight: 700;
       border: 2px solid #1e8c5a;
     }
+
     .calendar-day.event {
       background: #ffe066;
       color: #222;
     }
+
     .calendar-day.holiday {
       background: #ff6b6b;
       color: #fff;
     }
+
     .calendar-day:hover {
-      background: #d1f5e0;
+      background: #9adfb7;
       color: #222;
     }
+
     .calendar-legend {
       display: flex;
       gap: 16px;
@@ -255,6 +289,7 @@
       margin-bottom: 12px;
       font-size: 0.98rem;
     }
+
     .legend-today, .legend-event, .legend-holiday {
       display: inline-block;
       width: 18px;
@@ -263,32 +298,58 @@
       margin-right: 4px;
       vertical-align: middle;
     }
+
     .legend-today { background: #2CB67D; border: 2px solid #1e8c5a; }
     .legend-event { background: #ffe066; }
     .legend-holiday { background: #ff6b6b; }
+
     .calendar-admin-panel {
       margin-top: 24px;
-      background: #f9f9f9;
-      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2rem; /* Matches .icone */
       padding: 16px 12px;
       text-align: left;
+      box-shadow: 
+        0 4px 12px 0 rgba(0, 0, 0, 0.25), 
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calendar-admin-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      pointer-events: none;
     }
     .calendar-admin-panel h3 {
       margin-top: 0;
       font-size: 1.1rem;
+      color: #2d3748; /* Consistent with other sections */
     }
+
     #eventForm {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
       align-items: center;
     }
+
     #eventForm input, #eventForm select, #eventForm button {
       padding: 6px 8px;
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 0.98rem;
     }
+
     #eventForm button {
       background: #2CB67D;
       color: #fff;
@@ -297,25 +358,114 @@
       cursor: pointer;
       transition: background 0.2s;
     }
+
     #eventForm button:hover {
       background: #1e8c5a;
     }
-    @media (max-width: 600px) {
-      .calendar-section { padding: 16px 4px; }
-      #calendar { grid-template-columns: repeat(7, 1fr); }
-      .calendar-day, .calendar-header { width: 28px; height: 28px; font-size: 0.9rem; }
+
+    /* Dark Mode Adjustments */
+    body.dark-mode .calendar-section {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 4px 12px 0 rgba(0, 0, 0, 0.4), 
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+      color: #e0e0e0; /* Adjust text color for contrast */
     }
-    /* Dark mode calendar */
-    body.dark-mode .calendar-section { background: #23272f; color: #fff; }
-    body.dark-mode .calendar-day, body.dark-mode .calendar-header { background: #23272f; color: #fff; }
-    body.dark-mode .calendar-day.today { background: #2CB67D; color: #fff; border-color: #fff; }
-    body.dark-mode .calendar-day.event { background: #ffe066; color: #222; }
-    body.dark-mode .calendar-day.holiday { background: #ff6b6b; color: #fff; }
-    body.dark-mode .calendar-day:hover { background: #1e8c5a; color: #fff; }
-    body.dark-mode .calendar-admin-panel { background: #181b20; }
-    body.dark-mode #eventForm input, body.dark-mode #eventForm select { background: #23272f; color: #fff; border-color: #444; }
-    body.dark-mode #eventForm button { background: #2CB67D; color: #fff; }
-    body.dark-mode #eventForm button:hover { background: #1e8c5a; }
+
+    body.dark-mode .calendar-section::before {
+      background: radial-gradient(
+        circle at 10% 10%, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        rgba(255, 255, 255, 0.02) 35%, 
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+
+    body.dark-mode .calendar-section h2 {
+      color: #f4f4f4; /* Adjust heading color */
+    }
+
+    body.dark-mode .calendar-day, body.dark-mode .calendar-header {
+      background: transparent;
+      color: #fff;
+    }
+
+    body.dark-mode .calendar-day.today {
+      background: #2CB67D;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    body.dark-mode .calendar-day.event {
+      background: #ffe066;
+      color: #222;
+    }
+
+    body.dark-mode .calendar-day.holiday {
+      background: #ff6b6b;
+      color: #fff;
+    }
+
+    body.dark-mode .calendar-day:hover {
+      background: #1e8c5a;
+      color: #fff;
+    }
+
+    body.dark-mode .calendar-admin-panel {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 4px 12px 0 rgba(0, 0, 0, 0.4), 
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .calendar-admin-panel::before {
+      background: radial-gradient(
+        circle at 10% 10%, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        rgba(255, 255, 255, 0.02) 35%, 
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+
+    body.dark-mode .calendar-admin-panel h3 {
+      color: #f4f4f4; /* Adjust heading color */
+    }
+
+    body.dark-mode #eventForm input, body.dark-mode #eventForm select {
+      background: #23272f;
+      color: #fff;
+      border-color: #444;
+    }
+
+    body.dark-mode #eventForm button {
+      background: #2CB67D;
+      color: #fff;
+    }
+
+    body.dark-mode #eventForm button:hover {
+      background: #1e8c5a;
+    }
+
+    /* Media Query for Responsive Design */
+    @media (max-width: 600px) {
+      .calendar-section {
+        padding: 24px 16px; /* Reduced padding for smaller screens */
+      }
+      #calendar {
+        grid-template-columns: repeat(7, 1fr);
+      }
+      .calendar-day, .calendar-header {
+        width: 36px; /* Slightly smaller than desktop but larger than original */
+        height: 36px;
+        font-size: 0.95rem;
+      }
+    }
   </style>
   
   <script>

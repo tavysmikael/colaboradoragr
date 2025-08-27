@@ -101,196 +101,142 @@
       <p>Acesse informações sobre seus benefícios e auxílios como colaborador da AGR.</p>
     </div>
   
-    <div class="icones-ferias">
-      <div class="icone">
-        <a href="#alimentacao" class="icone-link" aria-label="Auxílio Alimentação">
-          <img src="/assets/food.png" alt="Auxílio Alimentação" loading="lazy">
-          <span>Alimentação</span>
-        </a>
-      </div>
-      <div class="icone">
-        <a href="#transporte" class="icone-link" aria-label="Auxílio Transporte">
-          <img src="/assets/transport.png" alt="Auxílio Transporte" loading="lazy">
-          <span>Transporte</span>
-        </a>
-      </div>
-      <div class="icone">
-        <a href="#saude" class="icone-link" aria-label="Plano de Saúde">
-          <img src="/assets/health.png" alt="Plano de Saúde" loading="lazy">
-          <span>Saúde</span>
-        </a>
-      </div>
-      <div class="icone">
-        <a href="#outros" class="icone-link" aria-label="Outros Benefícios">
-          <img src="/assets/gym.png" alt="Outros Benefícios" loading="lazy">
-          <span>Outros</span>
-        </a>
-      </div>
-      <div class="icone">
-        <a href="#solicitacoes" class="icone-link" aria-label="Solicitações e Alterações">
-          <img src="/assets/request.png" alt="Solicitações e Alterações" loading="lazy">
-          <span>Solicitações</span>
-        </a>
-      </div>
-    </div>
-  
-    <section id="alimentacao" class="info-section">
-      <h2>Auxílio Alimentação</h2>
-      <div class="steps-container">
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            Vale Refeição
-          </h3>
-          <p>Benefício para auxiliar na alimentação dos servidores durante o expediente.</p>
-          <button class="btn-primary" onclick="viewFoodAllowance()" aria-label="Ver detalhes do vale refeição">Ver detalhes do vale refeição</button>
+    <section class="accordion" aria-label="Mais informações">
+    
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Assitência Pré-Escolar
+        </button>
+        
+        <div class="accordion-content">
+          <p>
+            Será pago o auxílio-funeral em valor correspondente a 5 (cinco) vezes o menor vencimento de cargo de provimento efetivo dos quadros estaduais com carga horária de 40 (quarenta) horas semanais, à família do servidor que falecer, ainda que aposentado ou em disponibilidade, horária de 40 (quarenta) horas semanais. O Benefício pode ser pago a qualquer pessoa que tenha sido responsável pelo sepultamento.
+          </p>
         </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            Restaurantes Conveniados
-          </h3>
-          <p>Rede de restaurantes conveniados para utilização do vale refeição.</p>
-          <button class="btn-secondary" onclick="viewPartnerRestaurants()" aria-label="Ver restaurantes conveniados">Ver restaurantes conveniados</button>
+      </div>    
+    
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Auxílio Alimentação
+        </button>
+        
+        <div class="accordion-content">
+          <p>
+            No Estado de Goiás, por meio da Lei nº 19.951/2017, os servidores que percebem remuneração de até R$ 5.508,00  reais tem direito à um auxílio-alimentação no valor de R$500,00 mensais.          </p>
+          <p>
+            O auxílio-alimentação destina-se à cobertura de despesas com alimentação do servidor e tem caráter indenizatório, não se incorporando, em qualquer hipótese, a sua remuneração mensal, caracterizando-se como rendimento não-tributável, sem a incidência de contribuição previdenciária, não sendo computado para efeito de cálculo de 13º (décimo terceiro) salário.          
+          </p>
+          
+          <h3 class="subsection-title">Saiba mais:</h3>
+          <ul>
+            <li>
+              <a href="https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/99826/pdf" target="_blank" class="inline-link">
+                legisla.casacivil.go.gov.br
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-  
-    <section id="transporte" class="info-section">
-      <h2>Auxílio Transporte</h2>
-      <div class="steps-container">
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 16V4h16v12M9 22h6m-6-6h6"/>
-            </svg>
-            Vale Transporte
-          </h3>
-          <p>Benefício para auxiliar nos custos de transporte público.</p>
-          <button class="btn-primary" onclick="viewTransportAllowance()" aria-label="Ver detalhes do vale transporte">Ver detalhes do vale transporte</button>
-        </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 16V4h16v12M9 22h6m-6-6h6"/>
-            </svg>
-            Estacionamento
-          </h3>
-          <p>Informações sobre estacionamento para servidores.</p>
-          <button class="btn-secondary" onclick="viewParking()" aria-label="Ver informações de estacionamento">Ver informações de estacionamento</button>
-        </div>
-      </div>
-    </section>
-  
-    <section id="saude" class="info-section">
-      <h2>Plano de Saúde</h2>
-      <div class="steps-container">
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-            Cobertura Médica
-          </h3>
-          <p>Informações sobre cobertura médica e odontológica.</p>
-          <button class="btn-primary" onclick="viewHealthPlan()" aria-label="Ver detalhes do plano de saúde">Ver detalhes do plano de saúde</button>
-        </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-            Rede Credenciada
-          </h3>
-          <p>Hospitais, clínicas e profissionais credenciados.</p>
-          <button class="btn-secondary" onclick="viewNetwork()" aria-label="Ver rede credenciada">Ver rede credenciada</button>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Clube de Desconto
+        </button>
+        
+        <div class="accordion-content">
+          <p>
+            O Clube de Desconto do Servidor é um programa criado pelo Poder Executivo do Estado de Goiás, representado pela Secretaria de Estado da Administração -SEAD, com o objetivo de proporcionar, por meio de parcerias, benefícios e vantagens aos Servidores Públicos do Estado.        
+          </p>
+          <p>
+            O programa conta com mais de duzentas (200) parcerias nos mais variados ramos: 
+          </p>
+          <ul>
+            <li><strong>Saúde e beleza;</strong></li>
+            <li><strong>Alimentação;</strong></li>
+            <li><strong>Educação;</strong></li>
+            <li><strong>Lazer;</strong></li>
+            <li><strong>Veículos;</strong></li>
+            <li><strong>Vestuários;</strong></li>
+            <li><strong>Calçados;</strong></li>
+            <li><strong>Artigos para o lar;</strong></li>
+            <li><strong>Dentre outros.</strong></li>
+          </ul>
+          <p>
+            Para aproveitar os descontos, o servidor deve apresentar, no ato da compra, o último contracheque e a carteira de identidade ou documento oficial com foto. 
+          </p>
+          
+          <h3 class="subsection-title">Saiba mais:</h3>
+          <ul>
+            <li>
+              <a href="https://www.portaldoservidor.go.gov.br/direitos-e-beneficios/clube-de-desconto.html" target="_blank" class="inline-link">
+                www.portaldoservidor.go.gov.br
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-  
-    <section id="outros" class="info-section">
-      <h2>Outros Benefícios</h2>
-      <div class="steps-container">
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            Gympass
-          </h3>
-          <p>Benefício para acesso a academias e atividades físicas.</p>
-          <button class="btn-primary" onclick="viewGympass()" aria-label="Ver detalhes do Gympass">Ver detalhes do Gympass</button>
-        </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            Descontos Corporativos
-          </h3>
-          <p>Descontos em estabelecimentos parceiros.</p>
-          <button class="btn-secondary" onclick="viewCorporateDiscounts()" aria-label="Ver descontos disponíveis">Ver descontos disponíveis</button>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Auxílio Funeral
+        </button>
+        
+        <div class="accordion-content">
+          <p>
+            Será pago o auxílio-funeral em valor correspondente a 5 (cinco) vezes o menor vencimento de cargo de provimento efetivo dos quadros estaduais com carga horária de 40 (quarenta) horas semanais, à família do servidor que falecer, ainda que aposentado ou em disponibilidade, horária de 40 (quarenta) horas semanais. O Benefício pode ser pago a qualquer pessoa que tenha sido responsável pelo sepultamento.          </p>
+          </p>
         </div>
       </div>
-    </section>
-  
-    <section id="solicitacoes" class="info-section">
-      <h2>Solicitações e Alterações</h2>
-      <div class="steps-container">
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14,2 14,8 20,8"/>
-            </svg>
-            Solicitar Benefício
-          </h3>
-          <p>Formulários para solicitação de novos benefícios.</p>
-          <button class="btn-primary" onclick="requestBenefit()" aria-label="Solicitar benefício">Solicitar benefício</button>
-        </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14,2 14,8 20,8"/>
-            </svg>
-            Alterar Benefício
-          </h3>
-          <p>Procedimentos para alteração de benefícios existentes.</p>
-          <button class="btn-secondary" onclick="changeBenefit()" aria-label="Alterar benefício">Alterar benefício</button>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Consignação
+        </button>
+        
+        <div class="accordion-content">
+          <p>
+            É um tipo de empréstimo, também conhecido como crédito consignado, que tem como principal diferença a forma de pagamento: todo mês, as parcelas da dívida são descontadas do salário do servidor, automaticamente.             
+          </p>
+          
+          <h3 class="subsection-title">Saiba mais - Consignações com segurança:</h3>
+          <ul>
+            <li>
+              <a href="https://www.portaldoservidor.go.gov.br/direitos-e-beneficios/consignacoes.html" target="_blank" class="inline-link">
+                portaldoservidor.go.gov.br
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-  
-    <section id="contato" class="info-section">
-      <h2>Contato e Suporte</h2>
-      <div class="steps-container">
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M22 2L11 13"/>
-              <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
-            </svg>
-            Setor de Benefícios
-          </h3>
-          <p>Telefone: (62) 3226-6436<br>Email: beneficios.agr@goias.gov.br</p>
-        </div>
-        <div class="step-card">
-          <h3>
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            Suporte RH
-          </h3>
-          <p>Para dúvidas sobre benefícios e auxílios.</p>
-          <button class="btn-primary" onclick="contactHR()" aria-label="Contatar RH">Contatar RH</button>
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Ipasgo - Saúde
+        </button>
+        
+        <div class="accordion-content">
+          <p>
+            A seguridade social do servidor público estadual compreende um conjunto integrado de ações destinadas a assegurar direitos relativos à saúde, à previdência e à assistência social. A assistência à saúde do servidor ativo ou inativo, de seu cônjuge, companheiro, dependentes e do pensionista compreende a assistência médica, hospitalar, odontológica, psicológica e farmacêutica.       
+          </p>
+          <p>
+            O IPASGO - Instituto de Assistência dos Servidores Públicos do Estado de Goiás é responsável pela administração de serviços, programas especiais e de ações que visam à promoção e assistência à saúde aos servidores públicos do Estado de Goiás e dos servidores públicos de organismos que mantém convênio com o Instituto. 
+          </p>
+          
+          <h3 class="subsection-title">Saiba mais:</h3>
+          <ul>
+            <li>
+              <a href="https://www.ipasgo.go.gov.br/files/Manual/ManualIpasgo2.pdf" target="_blank" class="inline-link">
+                ipasgo.go.gov.br
+              </a>
+            </li>
+          </ul>
+          <h3 class="subsection-title">Lei / Normativa:</h3>
+          <ul>
+            <p> 
+              - Lei nº 20.756 /2020
+            </p>
+            <li>
+              <a href="https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/100979/pdf" target="_blank" class="inline-link">
+                ipasgo.go.gov.br
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -573,6 +519,28 @@
           });
       });
     }
+    document.addEventListener('DOMContentLoaded', () => {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        const content = header.nextElementSibling;
+
+        // Collapse all other items
+        accordionHeaders.forEach(otherHeader => {
+          if (otherHeader !== header) {
+            otherHeader.setAttribute('aria-expanded', 'false');
+            otherHeader.nextElementSibling.classList.remove('show');
+          }
+        });
+
+        // Toggle the clicked item
+        header.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('show');
+      });
+    });
+  });
   </script>
 </body>
 </html> 

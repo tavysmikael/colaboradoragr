@@ -121,16 +121,19 @@ main {
 
 /* Banner fixo com sombra */
 .banner {
-  background:#f0f0f0;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para modo claro */
+  backdrop-filter: blur(10px); /* Efeito de blur vidro fosco */
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Borda sutil */
+  transition: background 0.3s ease; /* Transição suave */
   padding: 15px 0;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   z-index: 1000;
   box-shadow: 0 3px 12px rgba(0,0,0,0.2);
@@ -143,8 +146,6 @@ main {
 }
 
 .logo {
-  height: 50px;
-  margin-bottom: 8px;
   height: 48px;
   margin-bottom: 0;
 }
@@ -154,20 +155,6 @@ main {
   align-items: center;
   gap: 16px;
   margin-right: 32px;
-}
-
-.login-icon img {
-  width: 32px;
-  height: 32px;
-  background: #fff;
-  border-radius: 50%;
-  padding: 4px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  transition: box-shadow 0.2s;
-}
-
-.login-icon img:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .banner h1 {
@@ -194,23 +181,87 @@ main {
 
 /* Estilização dos ícones */
 .icone {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 32px 24px 16px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 22%; /* 4 per row, with gap */
+  width: 22%;
   min-width: 180px;
   max-width: 240px;
   height: 180px;
+  padding: 32px 24px 16px 24px;
+  border-radius: 2rem; 
   box-sizing: border-box;
-  transition: box-shadow 0.2s, color 0.18s; 
   cursor: pointer;
   position: relative;
-  z-index: 11;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* 1. FUNDO E BLUR */
+
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  /* Aumentei um pouco o blur para um efeito mais "fosco" */
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  
+  /* 2. BORDA */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* 3. SOMBRA */
+  /* Sombra externa mais suave */
+  box-shadow: 
+  0 4px 12px 0 rgba(0, 0, 0, 0.25),  
+  inset 0 1px 1px 0 rgba(255, 255, 255, 0.08); 
 }
+
+.icone::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; /* Herda o border-radius do pai */
+  pointer-events: none; /* Garante que o brilho não interfira no clique */
+
+  /* 4. BRILHO */
+  /* Um gradiente radial no canto simula um reflexo de luz pontual, que é mais realista. */
+  background: radial-gradient(
+    circle at 10% 10%, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.05) 35%, 
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.news-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 10% 10%, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.05) 35%, 
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.icone:hover {
+  transform: translateY(-4px) scale(1.05); /* Mais elevação para feedback */
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15), 
+    inset 0 6px 24px rgba(255, 255, 255, 0.35); /* Intensifica o glow no hover */
+}
+
+.icone i {
+  font-size: inherit; /* mantém o tamanho original do ícone */
+  color: #ffffffcc;
+}
+
+
 @media (max-width: 1100px) {
   .icone { width: 30%; }
 }
@@ -219,10 +270,6 @@ main {
 }
 @media (max-width: 600px) {
   .icone { width: 100%; }
-}
-
-.icone:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
 }
 
 .icone-link {
@@ -331,6 +378,35 @@ h2 {
   margin-bottom: 1rem; /* espaçamento após o título */
 }
 
+h3 {
+  font-size: 1.125rem; 
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.875rem;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1rem;     /* tamanho padrão de texto, mas em negrito */
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h5 {
+  font-size: 0.875rem; /* menor, para subtítulos bem específicos */
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+h6 {
+  font-size: 0.75rem;  /* menor título possível */
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .info-section h2 {
   color: #006837;
   margin-top: 0;
@@ -387,56 +463,6 @@ h2 {
   border-color: #007bff;
   outline: none;
 }
-
-.ferias-central {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 40px;
-}
-.ferias-central h2 {
-  margin-bottom: 12px;
-}
-.ferias-central ul {
-  text-align: left;
-  display: inline-block;
-  margin: 0 auto 32px auto;
-  padding-left: 20px;
-}
-.icones-ferias {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 32px;
-}
-.icone-ferias {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 24px 16px 12px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 120px;
-  transition: box-shadow 0.2s;
-  cursor: pointer;
-}
-.icone-ferias:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
-}
-.icone-ferias img {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 10px;
-}
-.icone-ferias span {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #000;
-}
 .voltar-container {
   width: 100%;
   display: flex;
@@ -447,7 +473,6 @@ h2 {
   padding: 16px 150px 0 0;
   box-sizing: border-box;
 }
-
 /* Floating Buttons */
 .floating-buttons {
   display: flex;
@@ -488,18 +513,18 @@ h2 {
 
 /* Dark Mode Button */
 #dark-mode-btn {
-  width: 50px; /* Mesmo tamanho do back-to-top */
+  width: 50px; 
   height: 50px;
   border: none;
   border-radius: 50%; /* Formato circular */
-  background: #4299e1; /* Mesmo fundo azul */
+  background: #4299e1; 
   color: white; /* Cor do ícone */
-  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3); /* Mesma sombra */
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3); 
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease; /* Mesma transição */
+  transition: all 0.3s ease; 
 }
 
 #dark-mode-btn:hover {
@@ -509,8 +534,9 @@ h2 {
 }
 
 #dark-mode-btn:focus {
-  outline: 2px solid #fff; /* Mantém acessibilidade */
+  outline: 1px solid rgba(255, 255, 255, 0.2); /* Mantém acessibilidade */
 }
+
 
 #dark-mode-btn span {
   font-size: 2rem; /* Ajusta o tamanho do ícone */
@@ -645,51 +671,45 @@ h2 {
   background-color: #135397;
 }
 
-
-/* Dark mode */
-body.dark-mode {
-  background: #181b20;
-  color: #f4f4f4;
-}
 body.dark-mode .banner {
-  background: #23272f;
-  color: #fff;
+  background: rgba(18, 18, 18, 0.8); /* Fundo semi-transparente para modo escuro */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 3px 12px rgba(0,0,0,0.45);
 }
 body.dark-mode .logo {
   filter: brightness(0.85) contrast(1.2);
 }
 body.dark-mode .nav-btn {
-  background: #23272f;
+  background: none !important; /* Força transparente no modo escuro */
   color: #fff;
-  border-color: #444;
+  border: none; /* Remove borda se não quiser */
 }
 body.dark-mode .nav-btn:hover, body.dark-mode .nav-btn:focus {
-  background: none; /* No background change */
-  color: #2CB67D; /* Green text, matching .icone-link in dark mode */
-  transform: translateY(-2px) scale(1.04); /* Keep transform effect */
+  background: none; /* Mantém transparente no hover */
+  color: #2CB67D; /* Cor verde para hover no dark mode, como no resto do tema */
+  transform: translateY(-2px) scale(1.04); /* Mantém o efeito de elevação */
 }
 body.dark-mode .menu-dropdown {
-  background: #23272f;
+  background: #0f0f0f;
   color: #fff;
-  border-color: #444;
+  border-color: #0f0f0f;
 }
 body.dark-mode .menu-dropdown button, body.dark-mode .menu-dropdown a {
-  background: #23272f;
+  background: #0f0f0f;
   color: #fff;
-  border-color: #444;
+  border-color: #0f0f0f;
 }
 body.dark-mode .menu-dropdown button:hover, body.dark-mode .menu-dropdown a:hover {
   background: #2CB67D;
   color: #fff;
 }
 body.dark-mode .footer-banner {
-  background: #23272f;
+  background: #0f0f0f;
   color: #fff;
   border-top: 2.5px solid #444;
 }
 body.dark-mode .copyright-bar {
-  background: #23272f;
+  background: #0f0f0f;
   color: #fff;
 }
 body.dark-mode .footer-social a {
@@ -701,26 +721,17 @@ body.dark-mode .footer-social a:hover {
   background: #2CB67D;
   color: #fff;
 }
-body.dark-mode .icone, body.dark-mode .icone-ferias {
-  background: #23272f;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-body.dark-mode .icone span, body.dark-mode .icone-ferias span {
+
+body.dark-mode .icone span {
   color: #fff;
 }
-body.dark-mode .icone:hover span, body.dark-mode .icone-ferias:hover span {
+body.dark-mode .icone:hover span {
   color: #2CB67D;
 }
-body.dark-mode .icone img, body.dark-mode .icone-ferias img {
-  filter: brightness(0.85) contrast(1.2);
+body.dark-mode .icone img {
+  filter: brightness(0) invert(1);
 }
-body.dark-mode .motivational-box {
-  background: #23272f;
-  color: #fff;
-  border-color: #2CB67D;
-}
-body.dark-mode .custom-hr, body.dark-mode .hr-footer {
+body.dark-mode .hr-footer {
   border-color: #444;
 }
 body.dark-mode .btn-voltar-fixo {
@@ -813,74 +824,6 @@ body.dark-mode .footer-social a:hover {
   background: none;
 }
 
-/* Caixa de mensagem motivadora */
-.motivational-box {
-  background: #dfdfdfd5; 
-  color: #000; 
-  border-radius: 0;
-  padding: 16px 20px; /* Adjust padding for consistency */; /* Aumenta o padding vertical para maior altura */
-  font-size: 1.18rem;
-  font-weight: 600;
-  box-shadow: none; /* Sombra para destaque */
-  max-width: 250px; /* Reduz a largura */
-  min-width: 180px; /* Reduz a largura mínima */
-  height: auto; 
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: static; /* Posiciona fora do fluxo normal */
-  right:700px; /* Alinha ao canto esquerdo com margem */
-  top: -845px; /* Alinha ao topo da seção .icones */
-}
-
-body.dark-mode .motivational-box {
-  background: #222;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.07);
-}
-
-.quote-icon {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #b0b0b0;
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-}
-.motivational-box {
-  position: relative;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-.quote-open {
-  top: 8px;
-  left: 12px;
-}
-.quote-close {
-  bottom: 8px;
-  right: 12px;
-}
-.motivational-text {
-  display: block;
-  position: relative;
-  z-index: 3;
-  text-align: left;
-  margin: 0 16px;
-}
-
-/* Linha horizontal customizada para separação visual */
-.custom-hr {
-  border: none;
-  border-top: 2.5px solid #000;
-  margin: 32px auto 0 auto;
-  width: 98vw;
-  max-width: 1600px;
-  box-sizing: border-box;
-}
-body.dark-mode .custom-hr {
-  border-top: 2.5px solid #fff;
-}
-
 /* Linha horizontal para separar o footer */
 .hr-footer {
   border: none;
@@ -909,16 +852,6 @@ body.dark-mode .hr-footer {
     min-height: 120px; /* Altura mínima ajustada */
     padding: 20px 10px 10px 10px;
   }
-  .motivational-box {
-    position: static; /* Volta ao fluxo normal em telas menores */
-    max-width: 100%; /* Ocupa a largura disponível */
-    min-width: 160px; /* Mantém largura mínima reduzida */
-    height: 100px; /* Reduz a altura para telas menores */
-    margin: 0 0 20px 16px; /* Alinha à esquerda com espaço abaixo */
-    font-size: 1rem; /* Reduz a fonte */
-    padding: 16px 12px; /* Reduz o padding */
-    border-radius: 0; /* Bordas retas */
-  }
   .banner h1 {
     font-size: 1.3rem;
   }
@@ -945,16 +878,6 @@ body.dark-mode .hr-footer {
     top: 8px;
     right: 8px;
     padding: 6px;
-  }
-  .icones-ferias {
-    gap: 16px;
-  }
-  .icone-ferias {
-    width: 90px;
-    padding: 12px 6px 6px 6px;
-  }
-  .ferias-central ul {
-    padding-left: 14px;
   }
   .voltar-container {
     padding: 8px 8px 0 0;
@@ -1004,6 +927,15 @@ body.dark-mode .hr-footer {
   align-items: center;
   justify-content: center;
 }
+
+/* Hamburger icon color for dark mode */
+.header-right .login-icon svg rect {
+  fill: #000 !important;
+}
+.header-right .login-icon svg {
+  color: #000;
+}  
+
 /* Hamburger icon color for dark mode */
 body.dark-mode .header-right .login-icon svg rect {
   fill: #fff !important;
@@ -1030,34 +962,21 @@ body.dark-mode .nav-btn:hover, body.dark-mode .icone-link:hover, body.dark-mode 
   background: none;
 }
 
-body, .motivational-box, .icones, .icone, .footer-banner, .custom-hr {
+body.icones, .icone, .footer-banner {
   color-scheme: light dark;
 }
 
 body.dark-mode {
-  background: #181b20;
+  background: #0f0f0f;
   color: #f4f4f4;
 }
 
-body.dark-mode .motivational-box {
-  background: #23272f;
-  color: #fff;
-}
-
-body.dark-mode .icone {
-  background: #23272f;
-  color: #fff;
-}
-
-body.dark-mode .footer-banner {
-  background: #23272f;
-  color: #fff;
-}
-
+body.dark-mode .icone,
 body.dark-mode .nav-btn {
-  background: #23272f;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
   color: #fff;
 }
+
 
 body.dark-mode .icone-link {
   color: #fff;
@@ -1094,66 +1013,6 @@ body.dark-mode .section-title, body.dark-mode .main-title {
   color: #2CB67D;
 }
 
-/* Página 404 */
-.page-404 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  text-align: center;
-}
-.page-404 h1 {
-  font-size: 4rem;
-  color: #ff6b6b;
-}
-.page-404 p {
-  font-size: 1.3rem;
-  margin-bottom: 24px;
-}
-.page-404 a {
-  color: #2CB67D;
-  font-weight: 600;
-  text-decoration: underline;
-}
-.page-404 a:hover {
-  color: #1e8c5a;
-}
-
-/* User Progress - Gamification */
-.user-progress {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #e2e8f0;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 8px;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #4299e1, #3182ce);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-  width: 0%;
-}
-
-.progress-text {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin: 0;
-}
-
 /* Quick Actions */
 .quick-actions {
   max-width: 800px;
@@ -1162,17 +1021,15 @@ body.dark-mode .section-title, body.dark-mode .main-title {
 }
 
 .quick-actions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  display: flex; /* Muda de grid para flex */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Alinha verticalmente no centro */
+  gap: 16px; /* Mantém o espaçamento entre botões */
   margin-bottom: 40px;
 }
 
 .quick-action-btn {
-  background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1181,16 +1038,83 @@ body.dark-mode .section-title, body.dark-mode .main-title {
   font-size: 14px;
   font-weight: 500;
   color: #4a5568;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+
+  /* 1. FUNDO E BLUR */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  
+  /* 2. BORDA */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* 3. SOMBRA */
+  box-shadow: 
+    0 4px 12px 0 rgba(0, 0, 0, 0.25),  
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08); 
+}
+
+.quick-action-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; /* Herda o border-radius do pai */
+  pointer-events: none; /* Garante que o brilho não interfira no clique */
+
+  /* 4. BRILHO */
+  background: radial-gradient(
+      circle at 10% 10%, 
+      rgba(255, 255, 255, 0.25) 0%, 
+      rgba(255, 255, 255, 0.05) 35%, 
+      rgba(255, 255, 255, 0) 70%
+  );
 }
 
 .quick-action-btn:hover {
-  border-color: #4299e1;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.15);
+  transform: translateY(-4px) scale(1.05); /* Mais elevação para feedback */
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15), 
+    inset 0 6px 24px rgba(255, 255, 255, 0.35); /* Intensifica o glow no hover */
 }
 
 .quick-action-btn svg {
-  color: #4299e1;
+  color: #4299e1; /* Mantém a cor do ícone SVG */
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .quick-action-btn {
+  color: #e2e8f0; /* Texto claro para contraste no dark mode */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)); /* Fundo mais escuro e transparente */
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borda clara para contraste */
+  box-shadow: 
+    0 4px 12px 0 rgba(0, 0, 0, 0.4),  
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05); 
+}
+
+body.dark-mode .quick-action-btn::before {
+  background: radial-gradient(
+    circle at 10% 10%, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.02) 35%, 
+    rgba(255, 255, 255, 0) 70%
+  ); /* Gradiente mais sutil no dark mode */
+}
+
+body.dark-mode .quick-action-btn:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 
+  inset 0 6px 24px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .quick-action-btn svg {
+  color: #63b3ed; /* Cor do ícone SVG ajustada para dark mode (azul claro) */
 }
 
 /* News Section */
@@ -1207,16 +1131,42 @@ body.dark-mode .section-title, body.dark-mode .main-title {
 }
 
 .news-card {
-  background: white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 
+    0 4px 12px 0 rgba(0, 0, 0, 0.25), 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Para conter o pseudo-elemento */
+}
+
+.news-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 10% 10%, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.05) 35%, 
+    rgba(255, 255, 255, 0) 70%
+  );
 }
 
 .news-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15), 
+    inset 0 6px 24px rgba(255, 255, 255, 0.35);
 }
 
 .news-date {
@@ -1228,7 +1178,7 @@ body.dark-mode .section-title, body.dark-mode .main-title {
 .news-card h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #2d3748;
+  color: #718096;
   margin: 0 0 12px 0;
 }
 
@@ -1300,12 +1250,15 @@ body.dark-mode .section-title, body.dark-mode .main-title {
   transition: all 0.3s ease;
   z-index: 1000;
 }
-
 #back-to-top-btn:hover {
   background: #3182ce;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
 }
+#back-to-top-btn:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.2); /* Mantém acessibilidade */
+}
+
 
 /* Enhanced Footer */
 .footer-content {
@@ -1348,48 +1301,6 @@ body.dark-mode .section-title, body.dark-mode .main-title {
 
 .footer-section ul li a:hover {
   color: #4299e1;
-}
-
-/* Dark mode enhancements */
-body.dark-mode .user-progress {
-  background: #2d3748;
-  color: #e2e8f0;
-}
-
-body.dark-mode .progress-bar {
-  background: #4a5568;
-}
-
-body.dark-mode .progress-text {
-  color: #a0aec0;
-}
-
-body.dark-mode .quick-action-btn {
-  background: #2d3748;
-  border-color: #4a5568;
-  color: #e2e8f0;
-}
-
-body.dark-mode .quick-action-btn:hover {
-  border-color: #4299e1;
-  background: #2d3748;
-}
-
-body.dark-mode .news-card {
-  background: #2d3748;
-  color: #e2e8f0;
-}
-
-body.dark-mode .news-card h3 {
-  color: #e2e8f0;
-}
-
-body.dark-mode .news-card p {
-  color: #a0aec0;
-}
-
-body.dark-mode .news-date {
-  color: #718096;
 }
 
 body.dark-mode .notification-toast {
@@ -1511,39 +1422,6 @@ body.dark-mode .step-card h3 svg {
   cursor: pointer;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #4299e1, #3182ce);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
-}
-
-.btn-secondary {
-  background: var(--card-bg);
-  color: var(--text-color);
-  border: 2px solid var(--border-color);
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: var(--border-color);
-}
 
 .kanban-board {
   display: grid;
@@ -1880,11 +1758,13 @@ body.dark-mode .breadcrumb-item[aria-current="page"] {
 }
 
 .accordion-header:hover {
-  background-color: #e0e0e0;
+  background-color: #4299e1;
+  color: #fff;
 }
 
 .accordion-header[aria-expanded="true"] {
-  background-color: #d1d1d1;
+  background-color: #4299e1;
+  color: #fff;
 }
 
 .accordion-content {
@@ -1962,6 +1842,7 @@ body.dark-mode .accordion-header[aria-expanded="true"] {
   border-bottom-color: #2CB67D; /* Sublinhado verde no focus */
 }
 
+
 /* Dark Mode */
 body.dark-mode .inline-link {
   color: #63b3ed; /* Azul claro para contraste no modo escuro */
@@ -1976,4 +1857,145 @@ body.dark-mode .inline-link:hover {
 body.dark-mode .inline-link:focus {
   outline: 2px solid #2CB67D;
   border-bottom-color: #2CB67D;
+}
+
+/* Botão Primário */
+.btn-primary {
+  background: linear-gradient(135deg, #104783, #0c3a66); /* Gradiente baseado em #104783 */
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px; /* Tamanho consistente */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho de fonte uniforme */
+  font-weight: 600; /* Peso para profissionalismo */
+  font-family: 'Inter', sans-serif; /* Mesma fonte do site */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço para ícones */
+  box-shadow: 0 3px 10px rgba(16, 71, 131, 0.3); /* Sombra suave */
+  transition: all 0.3s ease; /* Transição suave para hover, foco e ativo */
+  text-decoration: none;
+  min-width: 140px; /* Tamanho mínimo para consistência */
+  height: 44px; /* Altura fixa para uniformidade */
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0c3a66, #09294c); /* Gradiente mais escuro no hover */
+  transform: translateY(-2px); /* Elevação sutil */
+  box-shadow: 0 6px 16px rgba(16, 71, 131, 0.5); /* Sombra mais intensa */
+}
+
+.btn-primary:focus {
+  outline: 2px solid #2CB67D; /* Outline verde para acessibilidade */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(44, 182, 125, 0.3); /* Halo no foco */
+}
+
+.btn-primary:active {
+  transform: translateY(0); /* Volta à posição original */
+  box-shadow: 0 3px 10px rgba(16, 71, 131, 0.3); /* Sombra reduzida */
+}
+
+body.dark-mode .btn-primary {
+  background: linear-gradient(135deg, #1e6ab0, #104783); /* Gradiente mais claro para modo escuro */
+  color: #ffffff;
+}
+
+body.dark-mode .btn-primary:hover {
+  background: linear-gradient(135deg, #2b88d8, #1e6ab0); /* Hover no modo escuro */
+  box-shadow: 0 6px 16px rgba(30, 106, 176, 0.5);
+}
+
+body.dark-mode .btn-primary:focus {
+  outline: 2px solid #2CB67D;
+  box-shadow: 0 0 0 4px rgba(44, 182, 125, 0.3);
+}
+
+/* Botão Secundário */
+.btn-secondary {
+  background: transparent;
+  color: #104783; /* Cor de texto baseada em #104783 */
+  border: 2px solid #104783; /* Borda com a cor base */
+  padding: 12px 24px; /* Mesmo tamanho do primário */
+  border-radius: 8px; /* Mesmo formato do primário */
+  font-size: 1rem; /* Mesma fonte */
+  font-weight: 600; /* Mesmo peso */
+  font-family: 'Inter', sans-serif; /* Mesma fonte */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço para ícones */
+  box-shadow: 0 3px 10px rgba(16, 71, 131, 0.2); /* Sombra leve */
+  transition: all 0.3s ease; /* Mesma transição */
+  text-decoration: none;
+  min-width: 140px; /* Mesmo tamanho mínimo */
+  height: 44px; /* Mesma altura */
+}
+
+.btn-secondary:hover {
+  background: #104783; /* Fundo com a cor base no hover */
+  color: #ffffff; /* Texto branco para contraste */
+  border-color: #0c3a66; /* Borda mais escura */
+  transform: translateY(-2px); /* Mesma elevação */
+  box-shadow: 0 6px 16px rgba(16, 71, 131, 0.4); /* Sombra mais intensa */
+}
+
+.btn-secondary:focus {
+  outline: 2px solid #2CB67D; /* Mesmo outline verde */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(44, 182, 125, 0.3); /* Mesmo halo */
+}
+
+.btn-secondary:active {
+  transform: translateY(0); /* Volta à posição original */
+  box-shadow: 0 3px 10px rgba(16, 71, 131, 0.2); /* Sombra reduzida */
+}
+
+body.dark-mode .btn-secondary {
+  color: #1e6ab0; /* Cor mais clara para modo escuro */
+  border-color: #1e6ab0; /* Borda ajustada */
+  box-shadow: 0 3px 10px rgba(30, 106, 176, 0.3);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: #1e6ab0; /* Fundo no hover */
+  color: #ffffff;
+  border-color: #2b88d8; /* Borda mais clara */
+  box-shadow: 0 6px 16px rgba(30, 106, 176, 0.5);
+}
+
+body.dark-mode .btn-secondary:focus {
+  outline: 2px solid #2CB67D;
+  box-shadow: 0 0 0 4px rgba(44, 182, 125, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .btn-primary, .btn-secondary {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    min-width: 120px;
+    height: 40px;
+  }
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 1rem; /* Espaço de 24px entre parágrafos */
+}
+
+body.dark-mode p {
+  color: #e2e8f0; /* Texto claro para modo escuro */
+  text-align: justify; /* Mantém a justificação no modo escuro */
+}
+
+/* Ajuste responsivo */
+@media (max-width: 600px) {
+  p {
+    margin-bottom: 1rem;
+    text-align: justify; /* Mantém a justificação em telas menores */
+  }
 }

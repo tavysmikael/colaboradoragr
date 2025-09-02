@@ -100,7 +100,7 @@
       <div class="building-wrapper">
         <!-- Painel esquerdo -->
         <div id="left-panel" class="info-panel left">
-          <h2>Informações da Ala Esquerda</h2>
+          <h2>Integrantes da Ala Esquerda</h2>
           <div id="left-content">Clique em uma ala esquerda para ver as informações.</div>
         </div>
         <!-- Prédio -->
@@ -115,69 +115,364 @@
           </div>
           <!-- Andares -->
           <div class="floor" data-label="2º">
-            <div class="floor-left" data-side="left" data-info="2º Andar - Ala Esquerda: " onclick="toggleInfoBalloon('2-left')"></div>
-            <div class="floor-right" data-side="right" data-info="2º Andar - Ala Direita: " onclick="toggleInfoBalloon('2-right')"></div>
+            <div class="floor-left" data-side="left" data-info="2º Andar: " onclick="toggleInfoBalloon('2-left')"></div>
+            <div class="floor-right" data-side="right" data-info="2º Andar: " onclick="toggleInfoBalloon('2-right')"></div>
           </div>
           <div class="floor" data-label="3º">
             <div class="floor-left" data-side="left" data-info="
-              <h2>3º Andar - Ala Esquerda: <br>GEFDA</h2> <br> Integrantes:" onclick="toggleInfoBalloon('3-left')"></div>
+              <h2>3º Andar: Gerência de Finanças e Dívida Ativa - GEFDA</h2>
+              <ul>
+                <li><p><span class='name'>ARIELY LAURINHO CORREIA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DIVÂNIO ALVES PIMENTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>HERMES CARLOS DE FIGUEIREDO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>IDELMA RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JACINEIDE PEIXOTO ARAÚJO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JÚLIA TAVARES DOS REIS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LIDIA BORGES CUNHA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCIANA BATISTA DE ALMEIDA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MEIRIELEN OLIVEIRA CARDOSO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RITA DE CASSIA DE QUEIROZ MELO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ROSAMELIA SOUZA MOURA DE MELO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('3-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              <h2>3º Andar - Ala Direita:<br>Ouvidoria Setorial</h2> <br> Integrantes:" onclick="toggleInfoBalloon('3-right')"></div>
+              <h2>3º Andar: Ouvidoria Setorial</h2>
+              <ul>
+                <li><p><span class='name'>CARLOS JÚLIO DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DELZA CAMARGO REZENDE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DIVA MARIA DAS GRAÇAS TELES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DIVINA MARIA FERREIRA DE PAULA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>FRANCISCO VIEIRA DE MACEDO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUANA RIBEIRO DE SOUSA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MAISA AFONSO RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARCELA DE OLIVEIRA FALEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARCIA HELENA DE OLIVEIRA BARREIROS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>NEIDE MARIA DA SILVA BISPO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>REGINA APARECIDA DE AMORIM</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ROSA OLIVEIRA SANTANA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SUENNE BATISTA PEIXOTO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('3-right')"></div>
           </div>
           <div class="floor" data-label="4º">
             <div class="floor-left" data-side="left" data-info="
-              4º Andar - Ala Esquerda: PROCSET" onclick="toggleInfoBalloon('4-left')"></div>
+              <h2>4º Andar: Procuradoria Setorial - PROCSET</h2>
+              <ul>
+                <li><p><span class='name'>ADILSON AUGUSTO DUARTE SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GUSTAVO HENRIQUE CIPRIANO AGUIAR MUTAO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GUSTAVO HENRIQUE MARANHÃO LIMA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOELMA INARA BUENO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LAÍS FERREIRA DE ANDRADE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUANA ALVES OLIVEIRA REZENDE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIANE DO CARMO DE JESUS PIMENTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>NÁTALLY DOS SANTOS OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>THALYSSA BRAGA RIBEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('4-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              4º Andar - Ala Direita: GER. CONTABILIDADE <br>" onclick="toggleInfoBalloon('4-right')"></div>
+              <h3>Gerência de Gestão Institucional - GGI</h3>
+              <ul>
+                <li><p><span class='name'>HUGO DE ASSIS FURTADO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JEREMIAS BORGES VIEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RAPHAEL FLEURY CURADO SASSE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>TAVYS MIKAEL RIBEIRO DE ASSIS</span><span class='schedule'>Horário: 14h-18h</span></p></li>
+              </ul>
+              <hr>
+              <h3>Gerência de Contabilidade - GEC</h3>
+              <ul>
+                <li><p><span class='name'>ALLAN PALMER COLEHO FERREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DEUSDETE CARDOSO BELEM</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>EDE JANE DIAS MENDES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JÚLIA ÉVYLEN SOUSA MAIA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('4-right')"></div>
           </div>
           <div class="floor" data-label="5º">
             <div class="floor-left" data-side="left" data-info="
-              5º Andar - Ala Esquerda: RH" onclick="toggleInfoBalloon('5-left')"></div>
+              <h2>5º Andar: Gerência de Gestão Institucional - GGI</h2>
+              <ul>
+                <li><p><span class='name'>ALEXANDRE MÁRCIO FERRAZ DE LIMA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ANDRÉ LUIZ DE FREITAS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CAROLINA GOMES CINTRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DORIVAN DE SOUSA LIMA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GLAUCO JOSÉ</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JAIR ANTÔNIO RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JAQUELINE MARTINS ROSA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOSENILDA MARIA GONÇALVES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LEILA MARCIA DE AVILA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUÍS MAURÍCIO BESSA SCARTEZINI</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARTA DE SOUZA CIRQUEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MONICA URBANO BRAGA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PAULO CÉSAR MARTINS FERREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RAFAEL BUENO DUARTE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SALVIO DOUGLAS RIBEIRO TAVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>THAIS DE FREITAS CAMILO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('5-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              5º Andar - Ala Direita: Jurídico" onclick="toggleInfoBalloon('5-right')"></div>
+              <h2>5º Andar: Gerência de Apoio Administrativo - GEAA</h2>
+              <ul>
+                <li><p><span class='name'>ÁDILA CELI CORREIA DIAS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GABRIEL MEDEIROS ROCHA RODOVALHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GUSTAVO ESTEVES KOSSA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LIZIANA DE SOUSA LEITE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCAS ADÔRNO FRANÇA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MILTON ELIZEU DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SILVIO BONIFÁCIO BORGES FILHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('5-right')"></div>
           </div>
           <div class="floor" data-label="6º">
             <div class="floor-left" data-side="left" data-info="
-              6º Andar - Ala Esquerda: Marketing" onclick="toggleInfoBalloon('6-left')"></div>
+              <h2>6º Andar: Gerência de Tecnologia - GTEC</h2>
+              <ul>
+                <li><p><span class='name'>ANTÔNIO EMÍDIO VAZ NETO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>BRUNO DAVIS SILVA RIBEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CLEUSA MESSIAS BUENO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>FELIPE LIBÓRIO LAVRADOR</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>FRANCISCO MODESTO GOMES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GUSTAVO FERREIRA DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>HELBERT MAIK BARROS NEVES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOSUE DA SILVA FEITOSA JUNIOR</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>HELTON NUNES DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>IASMIN SOUSA RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>IDALINA DE MENDONÇA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('6-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              6º Andar - Ala Direita: Financeiro" onclick="toggleInfoBalloon('6-right')"></div>
+              <h2>6º Andar: Gerência de Tecnologia - GTEC</h2>
+              <ul>
+                <li><p><span class='name'>IGOR WASHINGTON ALVES DE SOUSA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOSÉ GUTHIERRE CORREIA RIBEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOSÉ NUNES ROCHA NETO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCAS LUIZ DA SILVA BORGES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCIANA DUTRA MARTINS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIA ANTONIA DE CASTRO MOTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIA DE FÁTIMA SALM</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MATHEUS GONÇALVES LEMES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MURILLO ROGER PEREIRA BEZERRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MUSTAFA TEODORO DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PEDRO LUCAS TELES VILELA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PEDRO RODRIGUES SILVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RAQUEL VITÓRIA VIEIRA DE JESUS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>WALTER PAULO DE JESUS BATISTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('6-right')"></div>
           </div>
           <div class="floor" data-label="7º">
             <div class="floor-left" data-side="left" data-info="
-              7º Andar - Ala Esquerda: Diretoria" onclick="toggleInfoBalloon('7-left')"></div>
+              <h3>Gerência de Regulação Econômica - GERE</h3>
+              <ul>
+                <li><p><span class='name'>DILSON VIEIRA LEMOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GABRIELLA QUEIROZ BRITO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>HUGGO SIQUEIRA VINHAL</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RAFAEL BARBOSA DE CARVALHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>WALTER FERREIRA DE OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>
+              <hr>
+              <h3>Gerência de Bens Desestatizados - GEBD</h3>
+              <ul>
+                <li><p><span class='name'>CARLA SOARES DE PAIVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GEOVANA DE FÁTIMA MOREIRA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GLENN OLIVER CANEDO MEREB</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LAYLA BARBOSA DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PAULO CÉSAR DE JESUS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PAULO HENRIQUE OLIVEIRA MARQUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>TIAGO LAGE MIOTO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>VALMIR SOARES NOVAES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('7-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              7º Andar - Ala Direita: Sala de Reuniões" onclick="toggleInfoBalloon('7-right')"></div>
+              <h2>7º Andar: Gerência de Saneamento Básico - GESB</h2>
+              <ul>
+                <li><p><span class='name'>ALESSANDRA FRANCISCA DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CLÁUDIO RODRIGUES DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LAUREN CRISTINA VILA NOVA SOARES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LORENA PATRÍCIA DE OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PATRÍCIA SILVA CACERES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SINNARA GOMES DE GODOY</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>WILSON ROBERTO DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('7-right')"></div>
           </div>
           <div class="floor" data-label="8º">
             <div class="floor-left" data-side="left" data-info="
-              8º Andar - Ala Esquerda: (Edite aqui)" onclick="toggleInfoBalloon('8-left')"></div>
+              <h2>8º Andar: Gerência de Transportes - GET</h2>
+              <ul>
+                <li><p><span class='name'>ADEMAR ANTONIO CARNEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ADEMAR GOMES CARNEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ANDRÉ LUIZ ALVES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ANDRÉ LUIZ GOMES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ANDRÉ LUIZ SARDINHA TAVARES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ANTÔNIO GILBERTO BORGES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CLAITOM DA SILVA CAVALCANTE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CRISTINA DA ROCHA ZANIN</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DARIO CENTUTION LARRAMENDIA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DEUSIVALDO MACIEL DE OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GILVANIA MARIA DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>HAYDN MENDES CARDOSO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>HUMBERTO LUIZ DE SOUZA CARVALHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>IRONEI ANGELO DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOÃO GABRIEL FERREIRA DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOÃO JOSÉ FERREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JONATAS ARNAUT DA CRUZ FILHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOSÉ HENRIQUE DE FREITAS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JUSCELINO VAZ DE ALMEIDA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>KRISTHIAN GABRIEL CARDOSO PEREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LEANDRO ALVES DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUDOUSINHO RODRIGUES ALVES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARCOS ENRIQUE MOREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIA LUCÍLIA DE OLIVEIRA PINHEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIA RITA GONÇALVES DA SILVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PAULO CÉSAR FERREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PEDRO HENRIQUE QUERMES COSTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ROBERTO CARLOS DE OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RONALDO RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SEBASTIÃO MARIA DE CARVALHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SERGIO AUGUSTO MASSUDA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>TATIANE RODRIGUES DE MELO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>TEOTÔNIO CARDOSO DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>VALDERI JOAQUIM DE LIMA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('8-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              8º Andar - Ala Direita: (Edite aqui)" onclick="toggleInfoBalloon('8-right')"></div>
+              <h2>8º Andar: Gerência de Energia - GE</h2>
+              <ul>
+                <li><p><span class='name'>DÉBORA TELLES DE SOUSA CAMPOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GABRIEL AMARO DE SALES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>IDALINO SERRA HORTENCIO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JORGE PEREIRA DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARCOS AURÉLIO DE SOUZA LIMA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ROMÁRIO ALVES DE QUEIROZ</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SOLANGE PAULA DE ALVARENGA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>
+              <hr>
+              <h3>Diretoria de Regulação e Fiscalização - DIRF</h3>
+              <ul>
+                <li><p><span class='name'>ENZO FRANÇA COSTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('8-right')"></div>
           </div>
           <div class="floor" data-label="9º">
             <div class="floor-left" data-side="left" data-info="
-              9º Andar - Ala Esquerda: (Edite aqui)" onclick="toggleInfoBalloon('9-left')"></div>
+              <h2>9º Andar: C. Comunicação</h2>
+              <hr>
+              <h3>Chefia de Gabinete</h3>
+              <ul>
+                <li><p><span class='name'>CARMEN CLECI DA CRUZ</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DANILO DE JESUS FRANÇA ARAÚJO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIA CLARA AUAD GRANDSIRE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MICHAEL VINICIUS SIQUEIRA DE DEUS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('9-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              9º Andar - Ala Direita: (Edite aqui)" onclick="toggleInfoBalloon('9-right')"></div>
+              <h2>9º Andar: Conselho Regulador</h2>
+              <ul>
+                <li><p><span class='name'>ADRIANA MACHADO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CELSO FLORES PINTO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ENE LÚCIA DA TRINDADE RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GERALDO ALVES DE CASTRO JÚNIOR</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GUY FRANCISCO BRASIL CAVALCANTI</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>
+              <hr>
+              <h3>Gabinete do Conselheiro Paulo</h3>
+              <ul>
+                <li><p><span class='name'>PAULO TIAGO TOLEDO CARVALHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('9-right')"></div>
           </div>
           <div class="floor" data-label="10º">
             <div class="floor-left" data-side="left" data-info="
-              10º Andar - Ala Esquerda: (Edite aqui)" onclick="toggleInfoBalloon('10-left')"></div>
+              <h2>10º Andar: Gabinete da Conselheira Natália</h2>
+              <ul>
+                <li><p><span class='name'>NATÁLIA MARIA BRICENO SPADONI</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>
+              <hr>
+              <h2>Conselho Regulador</h2>
+              <ul>
+                <li><p><span class='name'>ANDREIA PEIXOTO DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCIANA ELINA FERREIRA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>VICTOR AZEVEDO RODRIGUES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>WILSON COSTA FERREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>
+              <hr>
+              <h3>Diretoria de Regulação e Fiscalização - DIRF</h3>
+              <ul>
+                <li><p><span class='name'>EDUARDO HENRIQUE DA CUNHA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RALPH MILHOMEM DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('10-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              10º Andar - Ala Direita: (Edite aqui)" onclick="toggleInfoBalloon('10-right')"></div>
+              <h2>10º Andar: Gabinete do Conselheiro Ricardo</h2>
+              <ul>
+                <li><p><span class='name'>RICARDO BAIOCCHI CARNEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>
+              <hr>
+              <h3>Diretoria de Gestão Integrada - DGI</h3>
+              <ul>
+                <li><p><span class='name'>ANDREA BONANATO ESTRELA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>RAFAEL LISITA JÚNIOR</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('10-right')"></div>
           </div>
           <div class="floor" data-label="11º">
             <div class="floor-left" data-side="left" data-info="
-              11º Andar - Ala Esquerda: (Edite aqui)" onclick="toggleInfoBalloon('11-left')"></div>
+              <h2>11º Andar: Gerência de Transportes - GET</h2>
+              <ul>
+                <li><p><span class='name'>ADRIANA ROSAURA DE CASTRO BATISTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ALTAMIRO INACIO VIEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ÂNGELA MARIA DE CARVALHO FREIRE</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>CLAYSE DE SALES PIRES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>DELANO PÁDUA PACHECO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>EVALDO ROCHA DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>GUILHERME ANDRADE DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOÃO MARQUES RIBEIRO FILHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>JOSÉ WILLIAM DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCIANO MAGNO DA FONSECA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUDMYLLA SATYUGA SOUSA ALVES FERREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARCOS FELLIPE FERNANDES ALVES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>MARIA DE FÁTIMA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PAULO OTONI RIBEIRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>PEDRO AUGUSTO GONZAGA MOREIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>POLIANA REIS NUNES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>ROLDAN JOSÉ DE ALMEIDA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>SIMONE VEIGA LOBO COLICCHIO DE ABREU</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>TEREZINHA DE JESUS ASSIS BUENO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>THAMYLIS SILVA VILELA CASTRO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>UELISSON ARAUJO DE SOUZA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>UEUBER BRAZ DE OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('11-left')"></div>
             <div class="floor-right" data-side="right" data-info="
-              11º Andar - Ala Direita: (Edite aqui)" onclick="toggleInfoBalloon('11-right')"></div>
+              <h2>11º Andar: Gabinete do Presidente do Conselho Regulador</h2>
+              <ul>
+                <li><p><span class='name'>THIAGO NEPOMUCENO CARVALHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LUCAS LUSTOSA COELHO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+                <li><p><span class='name'>LEONARDO</span><span class='schedule'>Horário: 14h-18h</span></p></li>
+              </ul>" onclick="toggleInfoBalloon('11-right')"></div>
           </div>
-          <div class="floor" data-label="12º">
-            <div class="floor-left" data-side="left" data-info="
-              12º Andar - Ala Esquerda: (Edite aqui)" onclick="toggleInfoBalloon('12-left')"></div>
-            <div class="floor-right" data-side="right" data-info="
-              12º Andar - Ala Direita: (Edite aqui)" onclick="toggleInfoBalloon('12-right')"></div>
-          </div>
+        <div class="floor" data-label="12º">
+          <div class="floor-left" data-side="left" data-info="
+            <h2>12º Andar: Gerência de Secretaria Geral</h2>
+            <ul>
+              <li><p><span class='name'>ADRIANA SOUZA DOS SANTOS</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+            </ul>
+            <hr>
+            <h3>Gabinete do Presidente do Conselho Regulador</h3>
+            <ul>
+              <li><p><span class='name'>EUNICE APARECIDA DE LIMA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+            </ul>
+            <hr>
+            <h3>Presidência</h3>
+            <ul>
+              <li><p><span class='name'>WAGNER OLIVEIRA GOMES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+            </ul>" onclick="toggleInfoBalloon('12-left')"></div>
+          <div class="floor-right" data-side="right" data-info="
+            <h2>12º Andar: Gerência de Secretaria Geral</h2>
+            <ul>
+              <li><p><span class='name'>ALBERTO ESTRELA NETO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>DANIELA GARCIA FLEURY</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>JAVAN CARLOS DE ARAÚJO COSTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>JULIANA VICTÓRIA CORRÊA FIRMIANO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>KEZIA DAIANE DIAS NUNES</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+            </ul>
+            <hr>
+            <h3>Chefia de Gabinete</h3>
+            <ul>
+              <li><p><span class='name'>COMARI VAZ VIEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>FELIPI JESUS DO NASCIMENTO</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>BRENO PEREIRA DA SILVA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+            </ul>
+            <hr>
+            <h3>Gerência de Apoio Administrativo</h3>
+            <ul>
+              <li><p><span class='name'>CARLOS JOSÉ DA COSTA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+              <li><p><span class='name'>JOSEFINO ANGELO DE OLIVEIRA</span><span class='schedule'>Horário: 07h-11h | 13h-17h</span></p></li>
+            </ul>" onclick="toggleInfoBalloon('12-right')"></div>
+          </div>  
           <div class="floor" data-label="">
             <div class="floor-left" data-side="left" data-info="13º Andar - Ala Esquerda: Auditorio" onclick="toggleInfoBalloon('13-left')"></div>
             <div class="floor-right" data-side="right" data-info="13º Andar - Ala Direita: Cozinha" onclick="toggleInfoBalloon('13-right')"></div>
@@ -185,7 +480,7 @@
         </div>
         <!-- Painel direito -->
         <div id="right-panel" class="info-panel right">
-          <h2>Informações da Ala Direita</h2>
+          <h2>Integrantes da Ala Direita</h2>
           <div id="right-content">Clique em uma ala direita para ver as informações.</div>
         </div>
       </div>
@@ -368,7 +663,7 @@
     }
 
     .info-panel {
-      width: 500px;
+      width: 600px;
       height: 700px; 
       background: white;
       border: 2px solid #003366;
@@ -398,6 +693,42 @@
 
     .dark-mode .info-panel div {
       color: #d1d5db; /* Texto suave para o conteúdo */
+    }
+    /* Estilo para a lista de integrantes com espaçamento reduzido */
+    .info-panel ul {
+      list-style-type: disc; /* Marcadores de lista */
+      padding-left: 15px; /* Recuo menor para os marcadores */
+      margin: 0.25rem 0; /* Espaçamento vertical mínimo para a lista */
+    }
+
+    .info-panel li {
+      margin-bottom: 0.5rem; /* Espaçamento reduzido entre itens da lista */
+      color: #1a2e44; /* Cor no modo claro */
+    }
+
+    /* New styles for aligning schedule to the right */
+    .info-panel li p {
+      margin: 0;
+      display: flex; /* Use flexbox to align name and schedule */
+      justify-content: space-between; /* Push name to left, schedule to right */
+      align-items: center; /* Vertically center content */
+      gap: 1rem; /* Ensure some spacing between name and schedule */
+    }
+
+    /* Estilos para o dark mode */
+    .dark-mode .info-panel h2 {
+      color: #e0e7ff; /* Cor clara para o título no modo escuro */
+    }
+
+    .dark-mode .info-panel li {
+      color: #d1d5db; /* Cor suave para os itens no modo escuro */
+    }
+    .info-panel h2 {
+      font-size: 1.1rem; /* Tamanho menor para o título */
+      font-weight: 600; /* Mantém o destaque */
+      margin-top: 0.5rem; /* Espaçamento superior  */
+      margin-bottom: 0.8rem; /* Espaçamento inferior  */
+      color: #1a2e44; /* Cor no modo claro */
     }
 
     @keyframes fadeIn {
@@ -445,7 +776,14 @@
       }
 
       .info-panel {
-        width: 200px;
+        max-width: 100%; /* Full width on small screens */
+        padding: 0.75rem;
+      }
+
+      .info-panel li p {
+        flex-wrap: wrap; /* Allow wrapping if content is too long */
+        gap: 0.5rem; /* Reduce gap on small screens */
+        font-size: 0.9rem; /* Slightly smaller text */
       }
     }
 

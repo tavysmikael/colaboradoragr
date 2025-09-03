@@ -84,7 +84,10 @@
 
   <header class="banner" role="banner">
     <div class="header-left">
-      <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      <img id="main-logo" 
+          src="https://raw.githubusercontent.com/tavysmikael/colaboradoragr/bc424350bb2fe99f14035e253130cd192bfdbf7a/logocompleto.webp" 
+          alt="Logo completa da Agência Goiana de Regulação" 
+          class="logo" tabindex="0">
     </div>
     <div class="header-right">
       <nav class="nav-banner" aria-label="Navegação principal">
@@ -206,6 +209,12 @@
         </a>
       </div>
       <div class="icone">
+        <a href="gerenciamento-projetos.html" class="icone-link" aria-label="Gerenciamento de projetos">
+          <img src="https://img.icons8.com/?size=100&id=52222&format=png&color=000000" alt="Gerenciamento de projetos" loading="lazy">
+          <span>Gerenciamento de Projetos</span>
+        </a>
+      </div>
+      <div class="icone">
         <a href="galeria.html" class="icone-link" aria-label="Galeria">
           <img src="https://img.icons8.com/?size=100&id=eaL5H9a61DGX&format=png&color=000000" alt="Meu Perfil" alt="Galeria" loading="lazy">
           <span>Galeria Social</span>
@@ -233,12 +242,6 @@
         <a href="regime-disciplinar.html" class="icone-link" aria-label="Regime disciplinar">
           <img src="https://img.icons8.com/ios-filled/100/000000/scales.png" alt="Regime disciplinar" loading="lazy">
           <span>Regime Disciplinar</span>
-        </a>
-      </div>
-      <div class="icone">
-        <a href="gerenciamento-projetos.html" class="icone-link" aria-label="Gerenciamento de projetos">
-          <img src="https://img.icons8.com/?size=100&id=52222&format=png&color=000000" alt="Gerenciamento de projetos" loading="lazy">
-          <span>Gerenciamento de Projetos</span>
         </a>
       </div>
       <div class="icone">
@@ -457,16 +460,6 @@
       }
     });
 
-    // LOGO DYNAMIC SWITCH
-    function updateLogoForMode() {
-      const logo = document.getElementById('main-logo');
-      if (document.body.classList.contains('dark-mode')) {
-        logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-branco.png?raw=true';
-      } else {
-        logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true';
-      }
-    }
-
     // DARK MODE ICON SWITCH
     function updateDarkModeIcon() {
       const icon = document.getElementById('dark-mode-icon');
@@ -482,7 +475,6 @@
       menuDropdown.classList.remove('show');
       menuHamburger.setAttribute('aria-expanded', 'false');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-      updateLogoForMode();
       updateDarkModeIcon();
       
       // Analytics event
@@ -496,7 +488,6 @@
     if (localStorage.getItem('darkMode') === 'true') {
       document.body.classList.add('dark-mode');
     }
-    updateLogoForMode();
     updateDarkModeIcon();
 
     // Botão flutuante de dark mode

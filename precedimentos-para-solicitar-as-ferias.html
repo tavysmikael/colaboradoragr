@@ -10,7 +10,10 @@
 <body>
   <header class="banner">
     <div class="header-left">
-      <img id="main-logo" src="https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true" alt="Logo da Agência Goiana de Regulação" class="logo" tabindex="0">
+      <img id="main-logo" 
+          src="https://raw.githubusercontent.com/tavysmikael/colaboradoragr/bc424350bb2fe99f14035e253130cd192bfdbf7a/logocompleto.webp" 
+          alt="Logo completa da Agência Goiana de Regulação" 
+          class="logo" tabindex="0">
     </div>
     <div class="header-right">
       <nav class="nav-banner" aria-label="Navegação principal">
@@ -146,15 +149,7 @@
         menuDropdown.classList.toggle('show');
       }
     });
-    // LOGO DYNAMIC SWITCH
-    function updateLogoForMode() {
-      const logo = document.getElementById('main-logo');
-      if (document.body.classList.contains('dark-mode')) {
-        logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-branco.png?raw=true';
-      } else {
-        logo.src = 'https://github.com/tavysmikael/colaboradoragr/blob/35dd20706c02d12cf7c279e4f4f27f98cfa9a11c/logo-azul.png?raw=true';
-      }
-    }
+
    // DARK MODE ICON SWITCH
    function updateDarkModeIcon() {
       const icon = document.getElementById('dark-mode-icon');
@@ -168,14 +163,12 @@
       document.body.classList.toggle('dark-mode');
       menuDropdown.classList.remove('show');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-      updateLogoForMode();
       updateDarkModeIcon();
     }
     // Persistência do modo escuro
     if (localStorage.getItem('darkMode') === 'true') {
       document.body.classList.add('dark-mode');
     }
-    updateLogoForMode();
     updateDarkModeIcon();
     // Botão flutuante de dark mode
     document.getElementById('dark-mode-btn').addEventListener('click', function(e) {

@@ -488,7 +488,7 @@ h6 {
   align-items: center;
   justify-content: space-between; /* Separa breadcrumb à esquerda e botão à direita */
   width: 100%;
-  max-width: 1200px; /* Consistência com o layout */
+  max-width: 1600px; /* Consistência com o layout */
   margin: 0 auto; /* Centraliza o contêiner, alinhando com o hr */
   padding: 0 1rem; /* Adiciona padding para alinhar com margens comuns */
   box-sizing: border-box;
@@ -2121,3 +2121,4 @@ body.dark-mode p {
     text-align: justify; /* Mantém a justificação em telas menores */
   }
 }
+
